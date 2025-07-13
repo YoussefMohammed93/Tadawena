@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tadawena - Innovative Healthcare Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Sakkal+Majalla&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                600: "#0B0070",
+              },
+              neutral: {
+                800: "#5A5858",
+              },
+            },
+            fontFamily: {
+              sakkal: ["Sakkal Majalla", "serif"],
+              "open-sans": ["Open Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="w-full absolute top-5 left-0 z-50">
+      <nav class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a href="/" class="flex-shrink-0 flex items-center">
+            <img class="h-12 w-auto" src="public/logo.png" alt="Tadawena" />
+          </a>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#"
+                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                >Our Company</a
+              >
+              <a
+                href="#"
+                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                >Meet Our Leaders</a
+              >
+              <a
+                href="#"
+                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                >Products</a
+              >
+              <a
+                href="#"
+                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                >Latest News</a
+              >
+              <a
+                href="#"
+                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="mobile-menu-button text-primary-600 inline-flex items-center justify-center p-2 rounded-md transition-colors hover:bg-gray-100/35 focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden min-h-screen"
+      style="
+        background-image: url('public/hero-bg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <!-- Background overlay for better text readability -->
+      <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+      <div class="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-32 sm:pt-24">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center"
+        >
+          <!-- Left Content -->
+          <div class="text-left relative z-10">
+            <h1
+              class="text-primary-600 text-5xl md:text-6xl font-bold leading-tight mb-6 font-sakkal drop-shadow-lg"
+            >
+              Innovative Healthcare Solutions for a Healthier Tomorrow
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-800 mb-8 leading-relaxed">
+              Empowering your health through providing food supplements with the
+              highest quality, ensuring you and your loved ones stay away from
+              illness!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="bg-primary-600 hover:bg-transparent text-white hover:text-primary-600 border border-transparent hover:border-primary-600 py-4 px-8 rounded-sm transition-colors duration-200 text-lg"
+              >
+                View our products
+              </button>
+              <button
+                class="border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white py-4 px-8 rounded-sm transition-colors duration-200 text-lg"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+          <!-- Right Content - Hero Image -->
+          <div class="relative z-10">
+            <img
+              src="public/hero.png"
+              alt="Healthcare Professional"
+              class="w-full h-auto drop-shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>

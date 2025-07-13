@@ -1,0 +1,103 @@
+/* Font loading optimization and fallbacks */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Open Sans Regular"), local("OpenSans-Regular");
+}
+
+@font-face {
+  font-family: "Sakkal Majalla";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Sakkal Majalla"), local("SakkalMajalla");
+}
+
+/* Ensure fonts load properly on all devices */
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-display: swap;
+}
+
+/* Specific font fallbacks for Arabic/RTL text */
+.font-sakkal {
+  font-family: "Sakkal Majalla", "Times New Roman", "Arabic Typesetting",
+    "Traditional Arabic", serif;
+  font-display: swap;
+}
+
+.font-open-sans {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-display: swap;
+}
+
+/* Prevent invisible text during font swap */
+.font-loading {
+  font-display: swap;
+  visibility: visible;
+}
+
+/* Font loading states */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body.fonts-loaded {
+  opacity: 1;
+}
+
+/* Ensure critical text is always visible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  font-display: swap;
+  visibility: visible !important;
+}
+
+/* Mobile-specific font optimizations */
+@media (max-width: 768px) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Ensure text is visible during font load on mobile */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-display: swap;
+    visibility: visible;
+  }
+
+  /* Force hardware acceleration for better performance */
+  .font-sakkal,
+  .font-open-sans {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Preload critical fonts */
+@media (prefers-reduced-motion: no-preference) {
+  .font-sakkal,
+  .font-open-sans {
+    will-change: font-family;
+  }
+}

@@ -3,25 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>Tadawena - Innovative Healthcare Solutions</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Load fonts with optimized display strategy -->
+    <!-- iOS-compatible font loading -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Sakkal+Majalla&display=swap"
       rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
     />
-    <!-- Fallback for browsers that don't support onload -->
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Sakkal+Majalla&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -180,34 +174,65 @@
         </div>
       </div>
     </section>
-    <!-- Font Loading Script -->
+    <!-- iOS-compatible Font Loading Script -->
     <script>
-      // Ensure fonts are loaded before showing content
-      document.addEventListener("DOMContentLoaded", function () {
-        // Check if fonts are loaded
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(function () {
-            document.body.classList.add("fonts-loaded");
-          });
-        } else {
-          // Fallback for browsers that don't support Font Loading API
-          setTimeout(function () {
-            document.body.classList.add("fonts-loaded");
-          }, 3000);
-        }
+      // Detect iOS devices
+      const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-        // Force font loading for critical text
-        const fontLoadTimeout = setTimeout(function () {
+      // iOS-specific font loading strategy
+      if (isIOS) {
+        // For iOS, use a more aggressive approach
+        document.addEventListener("DOMContentLoaded", function () {
+          // Force fonts to load immediately on iOS
           document.body.classList.add("fonts-loaded");
-        }, 3000);
 
-        // Clear timeout if fonts load faster
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(function () {
-            clearTimeout(fontLoadTimeout);
+          // Create hidden elements to force font loading
+          const testElements = [
+            { family: "Open Sans", text: "Test" },
+            { family: "Sakkal Majalla", text: "اختبار" },
+          ];
+
+          testElements.forEach(function (font) {
+            const span = document.createElement("span");
+            span.style.fontFamily = font.family;
+            span.style.fontSize = "1px";
+            span.style.opacity = "0";
+            span.style.position = "absolute";
+            span.style.left = "-9999px";
+            span.textContent = font.text;
+            document.body.appendChild(span);
+
+            // Remove after forcing load
+            setTimeout(function () {
+              document.body.removeChild(span);
+            }, 100);
           });
-        }
-      });
+        });
+      } else {
+        // Standard font loading for other devices
+        document.addEventListener("DOMContentLoaded", function () {
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function () {
+              document.body.classList.add("fonts-loaded");
+            });
+          } else {
+            setTimeout(function () {
+              document.body.classList.add("fonts-loaded");
+            }, 2000);
+          }
+
+          const fontLoadTimeout = setTimeout(function () {
+            document.body.classList.add("fonts-loaded");
+          }, 2000);
+
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function () {
+              clearTimeout(fontLoadTimeout);
+            });
+          }
+        });
+      }
     </script>
 
     <!-- Main JavaScript -->

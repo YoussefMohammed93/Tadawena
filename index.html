@@ -3,17 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>Tadawena - Innovative Healthcare Solutions</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- iOS-compatible font loading -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Sakkal+Majalla&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ovo&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,24 +25,8 @@
               },
             },
             fontFamily: {
-              sakkal: [
-                "Sakkal Majalla",
-                "Times New Roman",
-                "Arabic Typesetting",
-                "Traditional Arabic",
-                "serif",
-              ],
-              "open-sans": [
-                "Open Sans",
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "Segoe UI",
-                "Roboto",
-                "Oxygen",
-                "Ubuntu",
-                "Cantarell",
-                "sans-serif",
-              ],
+              ovo: ["Ovo", "serif"],
+              "open-sans": ["Open Sans", "sans-serif"],
             },
           },
         },
@@ -141,7 +120,7 @@
           <!-- Left Content -->
           <div class="text-left relative z-10">
             <h1
-              class="text-primary-600 text-5xl md:text-6xl font-bold leading-tight mb-6 font-sakkal drop-shadow-lg"
+              class="text-primary-600 text-4xl md:text-[43px] font-extrabold leading-tight mb-6 font-ovo drop-shadow-lg"
             >
               Innovative Healthcare Solutions for a Healthier Tomorrow
             </h1>
@@ -174,67 +153,6 @@
         </div>
       </div>
     </section>
-    <!-- iOS-compatible Font Loading Script -->
-    <script>
-      // Detect iOS devices
-      const isIOS =
-        /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-      // iOS-specific font loading strategy
-      if (isIOS) {
-        // For iOS, use a more aggressive approach
-        document.addEventListener("DOMContentLoaded", function () {
-          // Force fonts to load immediately on iOS
-          document.body.classList.add("fonts-loaded");
-
-          // Create hidden elements to force font loading
-          const testElements = [
-            { family: "Open Sans", text: "Test" },
-            { family: "Sakkal Majalla", text: "اختبار" },
-          ];
-
-          testElements.forEach(function (font) {
-            const span = document.createElement("span");
-            span.style.fontFamily = font.family;
-            span.style.fontSize = "1px";
-            span.style.opacity = "0";
-            span.style.position = "absolute";
-            span.style.left = "-9999px";
-            span.textContent = font.text;
-            document.body.appendChild(span);
-
-            // Remove after forcing load
-            setTimeout(function () {
-              document.body.removeChild(span);
-            }, 100);
-          });
-        });
-      } else {
-        // Standard font loading for other devices
-        document.addEventListener("DOMContentLoaded", function () {
-          if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(function () {
-              document.body.classList.add("fonts-loaded");
-            });
-          } else {
-            setTimeout(function () {
-              document.body.classList.add("fonts-loaded");
-            }, 2000);
-          }
-
-          const fontLoadTimeout = setTimeout(function () {
-            document.body.classList.add("fonts-loaded");
-          }, 2000);
-
-          if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(function () {
-              clearTimeout(fontLoadTimeout);
-            });
-          }
-        });
-      }
-    </script>
-
     <!-- Main JavaScript -->
     <script src="main.js"></script>
   </body>

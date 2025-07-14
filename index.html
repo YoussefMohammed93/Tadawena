@@ -23,6 +23,9 @@
               neutral: {
                 800: "#5A5858",
               },
+              background: {
+                default: "#E6E4E4",
+              },
             },
             fontFamily: {
               ovo: ["Ovo", "serif"],
@@ -154,7 +157,7 @@
       </div>
     </section>
     <!-- Partners Section - Infinite Scroll -->
-    <section class="py-16 overflow-hidden">
+    <section class="py-16 overflow-hidden bg-background">
       <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Infinite Scroll Container -->
         <div class="partners-scroll-container">
@@ -218,6 +221,67 @@
               />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Video Section -->
+    <section class="pt-12 pb-16 bg-background">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 items-center"
+        >
+          <!-- Video Container - Left Side -->
+          <div class="relative">
+            <div
+              class="video-container relative rounded-lg overflow-hidden shadow-sm"
+            >
+              <!-- Video Element -->
+              <video
+                id="mainVideo"
+                class="w-full h-auto"
+                controls
+                poster="public/video-image.png"
+                preload="metadata"
+              >
+                <source
+                  src="/public/slideshow.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <!-- Custom Play Button Overlay -->
+              <div
+                class="play-button-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-5 transition-opacity duration-300"
+              >
+                <button
+                  id="playButton"
+                  class="play-button group relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg"
+                  aria-label="Play video"
+                >
+                  <!-- Play Icon -->
+                  <svg
+                    class="w-12 h-12 text-primary-600 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Content - Right Side -->
+          <div class="lg:pl-8">
+            <h2
+              class="text-primary-600 text-4xl md:text-5xl font-bold leading-tight mb-6 font-ovo"
+            >
+              Committed to Your Health, Backed by Science
+            </h2>
+            <p class="text-lg sm:text-xl text-neutral-800 mb-6 leading-relaxed">
+              We are committed to enhancing the quality of life through science-backed food supplements that support wellness for individuals and families alike. With a focus on innovation, safety, and effectiveness, we develop high-quality supplements including essential vitamins, minerals, and immune-boosting formulas designed to meet the nutritional needs of all age groups.
+            </p>
         </div>
       </div>
     </section>

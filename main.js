@@ -178,6 +178,122 @@ class MobileMenu {
   }
 }
 
+/**
+ * Video Player Class
+ */
+class VideoPlayer {
+  constructor() {
+    this.video = null;
+    this.playButton = null;
+    this.playButtonOverlay = null;
+    this.isPlaying = false;
+
+    this.init();
+  }
+
+  init() {
+    this.video = document.getElementById("mainVideo");
+    this.playButton = document.getElementById("playButton");
+    this.playButtonOverlay = document.querySelector(".play-button-overlay");
+
+    if (this.video && this.playButton && this.playButtonOverlay) {
+      this.bindEvents();
+    }
+  }
+
+  bindEvents() {
+    // Play button click
+    this.playButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.togglePlay();
+    });
+
+    // Video click to toggle play/pause
+    this.video.addEventListener("click", () => {
+      this.togglePlay();
+    });
+
+    // Video ended event
+    this.video.addEventListener("ended", () => {
+      this.showPlayButton();
+      this.isPlaying = false;
+    });
+
+    // Video pause event
+    this.video.addEventListener("pause", () => {
+      // Only show play button if video is actually paused (not during seeking)
+      if (this.video.paused) {
+        this.showPlayButton();
+        this.isPlaying = false;
+      }
+    });
+
+    // Video play event
+    this.video.addEventListener("play", () => {
+      this.hidePlayButton();
+      this.isPlaying = true;
+    });
+
+    // Video playing event (when video actually starts playing)
+    this.video.addEventListener("playing", () => {
+      this.hidePlayButton();
+      this.isPlaying = true;
+    });
+
+    // Video loading events
+    this.video.addEventListener("loadstart", () => {
+      if (this.video.paused) {
+        this.showPlayButton();
+      }
+    });
+
+    this.video.addEventListener("canplay", () => {
+      if (this.video.paused) {
+        this.showPlayButton();
+      }
+    });
+  }
+
+  togglePlay() {
+    if (this.video.paused) {
+      this.playVideo();
+    } else {
+      this.pauseVideo();
+    }
+  }
+
+  playVideo() {
+    this.video
+      .play()
+      .then(() => {
+        this.hidePlayButton();
+        this.isPlaying = true;
+      })
+      .catch((error) => {
+        console.error("Error playing video:", error);
+        this.showPlayButton();
+      });
+  }
+
+  pauseVideo() {
+    this.video.pause();
+    this.showPlayButton();
+    this.isPlaying = false;
+  }
+
+  showPlayButton() {
+    if (this.playButtonOverlay) {
+      this.playButtonOverlay.classList.remove("hidden");
+    }
+  }
+
+  hidePlayButton() {
+    if (this.playButtonOverlay) {
+      this.playButtonOverlay.classList.add("hidden");
+    }
+  }
+}
+
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Remove the old mobile menu functionality
@@ -188,6 +304,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize new mobile menu
   new MobileMenu();
+
+  // Initialize video player
+  new VideoPlayer();
 });
 
 // Additional utility functions
@@ -219,5 +338,5 @@ const utils = {
 
 // Export for potential module use
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { MobileMenu, utils };
+  module.exports = { MobileMenu, VideoPlayer, utils };
 }

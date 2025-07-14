@@ -187,8 +187,19 @@ class VideoPlayer {
     this.playButton = null;
     this.playButtonOverlay = null;
     this.isPlaying = false;
+    this.isIOS = this.detectIOS();
 
     this.init();
+  }
+
+  /**
+   * Detect if the device is iOS (iPhone, iPad, iPod)
+   */
+  detectIOS() {
+    return (
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+    );
   }
 
   init() {
@@ -197,6 +208,11 @@ class VideoPlayer {
     this.playButtonOverlay = document.querySelector(".play-button-overlay");
 
     if (this.video && this.playButton && this.playButtonOverlay) {
+      // Hide play button on iOS devices
+      if (this.isIOS) {
+        this.playButtonOverlay.style.display = "none";
+      }
+
       this.bindEvents();
     }
   }

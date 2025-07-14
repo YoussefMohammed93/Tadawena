@@ -1,0 +1,94 @@
+/* Partners Infinite Scroll Styles */
+.partners-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.partners-scroll-track {
+  display: flex;
+  gap: 4rem;
+  animation: scroll-left 20s linear infinite;
+  width: fit-content;
+}
+
+.partner-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 2.5rem;
+  min-width: 240px;
+  height: 140px;
+}
+
+.partner-logo {
+  max-width: 100%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.partners-scroll-container:hover .partners-scroll-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .partners-scroll-track {
+    gap: 2rem;
+    animation-duration: 25s;
+  }
+
+  .partner-card {
+    min-width: 160px;
+    height: 120px;
+    padding: 1.5rem;
+  }
+
+  .partner-logo {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-scroll-track {
+    gap: 1.5rem;
+    animation-duration: 20s;
+  }
+
+  .partner-card {
+    min-width: 140px;
+    height: 140px;
+    padding: 1rem;
+  }
+
+  .partner-logo {
+    max-height: 100px;
+  }
+}

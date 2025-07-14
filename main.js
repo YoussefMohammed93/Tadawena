@@ -179,6 +179,101 @@ class MobileMenu {
 }
 
 /**
+ * Scroll to Top Button Class
+ */
+class ScrollToTopButton {
+  constructor() {
+    this.button = null;
+    this.isVisible = false;
+    this.scrollThreshold = 500; // Show button after scrolling 500px
+    this.isScrolling = false;
+
+    this.init();
+  }
+
+  init() {
+    this.button = document.getElementById("scrollToTopBtn");
+
+    if (this.button) {
+      this.bindEvents();
+    }
+  }
+
+  bindEvents() {
+    // Throttled scroll event listener for better performance
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          this.handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Button click event
+    this.button.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.scrollToTop();
+    });
+
+    // Add keyboard support
+    this.button.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.scrollToTop();
+      }
+    });
+  }
+
+  handleScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollY > this.scrollThreshold && !this.isVisible) {
+      this.showButton();
+    } else if (scrollY <= this.scrollThreshold && this.isVisible) {
+      this.hideButton();
+    }
+  }
+
+  showButton() {
+    this.isVisible = true;
+    this.button.classList.add("show");
+
+    // Add pulse animation on first appearance
+    this.button.classList.add("pulse");
+    setTimeout(() => {
+      this.button.classList.remove("pulse");
+    }, 600);
+  }
+
+  hideButton() {
+    this.isVisible = false;
+    this.button.classList.remove("show");
+  }
+
+  scrollToTop() {
+    // Prevent multiple rapid clicks
+    if (this.isScrolling) return;
+
+    this.isScrolling = true;
+
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    // Reset scrolling flag after animation completes
+    setTimeout(() => {
+      this.isScrolling = false;
+    }, 1000);
+  }
+}
+
+/**
  * Video Player Class
  */
 class VideoPlayer {
@@ -323,6 +418,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize video player
   new VideoPlayer();
+
+  // Initialize scroll to top button
+  new ScrollToTopButton();
 });
 
 // Additional utility functions

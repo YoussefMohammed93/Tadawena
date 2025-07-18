@@ -1,3 +1,8 @@
+/* Smooth scroll behavior for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Partners Infinite Scroll Styles */
 .partners-scroll-container {
   width: 100%;
@@ -237,9 +242,73 @@
   }
 }
 
-/* Smooth scroll behavior for the entire page */
-html {
-  scroll-behavior: smooth;
+/* Leaders Section Styles */
+
+@media (min-width: 1680px) {
+  .leaders-grid {
+    top: 17rem;
+  }
+}
+
+.leaders-section {
+  background: linear-gradient(135deg, #0b0070 0%, #090060 100%);
+}
+
+.leader-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.leader-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.leader-image {
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover .leader-image {
+  transform: scale(1.05);
+}
+
+.leader-info-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+.leader-hover-overlay {
+  background: rgba(11, 0, 112, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments for leaders section */
+@media (max-width: 768px) {
+  .leader-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .leader-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-info-overlay {
+    padding: 1rem;
+  }
+
+  .leader-info-overlay h3 {
+    font-size: 1.125rem;
+  }
+
+  .leader-info-overlay p {
+    font-size: 0.875rem;
+  }
 }
 
 /* Mobile responsiveness for scroll button */

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leader Information - Tadawena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ovo&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                600: "#0B0070",
+                700: "#090060",
+              },
+              neutral: {
+                800: "#5A5858",
+              },
+              background: {
+                100: "#fafbfc",
+              },
+            },
+            fontFamily: {
+              ovo: ["Ovo", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="leader-data.js"></script>
+  </head>
+  <body class="bg-background-100">
+    <!-- Header with Logo -->
+    <header class="bg-background-100">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center">
+            <img src="public/logo.png" alt="Tadawena" class="h-12 w-auto" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-background-100">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14">
+        <div class="flex items-center space-x-2 text-neutral-800">
+          <a
+            href="/"
+            class="hover:text-primary-600 transition-colors duration-200"
+            >Home</a
+          >
+          <svg
+            class="w-4 h-4 text-neutral-800"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-primary-600 font-medium">Meet Our Leaders</span>
+        </div>
+      </div>
+    </nav>
+    <!-- Loading State -->
+    <div
+      id="loadingState"
+      class="fixed w-full inset-0 bg-background-100 flex items-center justify-center z-50"
+    >
+      <div class="text-center">
+        <div
+          class="loader flex justify-center text-primary-600 mb-6 loader--style2"
+          title="1"
+        >
+          <svg
+            version="1.1"
+            id="loader-1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="40px"
+            height="40px"
+            viewBox="0 0 50 50"
+            style="enable-background: new 0 0 50 50"
+            xml:space="preserve"
+            class="fill-current w"
+          >
+            <path
+              fill="#000"
+              class="fill-primary-600"
+              d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+            >
+              <animateTransform
+                attributeType="xml"
+                attributeName="transform"
+                type="rotate"
+                from="0 25 25"
+                to="360 25 25"
+                dur="0.6s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg>
+        </div>
+        <p class="text-primary-600 text-lg font-medium">
+          Loading leader information...
+        </p>
+      </div>
+    </div>
+    <!-- Error State -->
+    <div id="errorState" class="hidden py-8 lg:py-10">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center py-16">
+          <div class="mb-8">
+            <svg
+              class="mx-auto h-24 w-24 text-primary-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.232 16.5c-.77.833.192 2.5 1.732 2.5z"
+              ></path>
+            </svg>
+          </div>
+          <h1
+            class="text-3xl md:text-4xl font-bold text-primary-600 font-ovo mb-4"
+          >
+            Leader Not Found
+          </h1>
+          <p class="text-lg text-neutral-800 mb-8">
+            Sorry, we couldn't find the leader information you're looking for.
+          </p>
+          <a
+            href="/"
+            class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              ></path>
+            </svg>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main id="mainContent" class="hidden py-8 lg:py-10">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Leader Profile Section -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start"
+        >
+          <!-- Left Content - Leader Information -->
+          <div class="order-2 md:order-1">
+            <!-- Leader Name and Title -->
+            <div class="mt-16 mb-8">
+              <h1
+                class="leader-name text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600 font-ovo mb-4"
+              >
+                Dr. Mohamed Elmetwally
+              </h1>
+              <p
+                class="leader-title text-xl md:text-2xl text-yellow-600 font-medium"
+              >
+                General Manager
+              </p>
+            </div>
+            <!-- Leader Description -->
+            <div class="mb-8">
+              <p class="text-lg text-neutral-800 leading-relaxed mb-6">
+                With over 20 years of experience working in large corporations
+                like Sanofi, Apex and IDI pharmaceutical companies, he held
+                several strategic positions as:
+              </p>
+              <ul class="achievements-list space-y-4 mb-8">
+                <li class="flex items-start">
+                  <div
+                    class="w-2 h-2 bg-primary-600 rounded-full mt-3 mr-4 flex-shrink-0"
+                  ></div>
+                  <p class="text-lg text-neutral-800 leading-relaxed">
+                    Sales and Marketing Director at Sanofi Kurdistan where he
+                    successfully lead both teams to increase the region's
+                    revenue by 50% compared to their last year.
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-2 h-2 bg-primary-600 rounded-full mt-3 mr-4 flex-shrink-0"
+                  ></div>
+                  <p class="text-lg text-neutral-800 leading-relaxed">
+                    District Supervisor at Apex where he launched products that
+                    are still best-sellers until today!
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- Social Media Links -->
+            <div class="mb-8">
+              <h3
+                class="text-xl sm:text-2xl font-semibold text-neutral-800 mb-4"
+              >
+                Follow on socials
+              </h3>
+              <div class="flex space-x-4">
+                <!-- LinkedIn -->
+                <a
+                  href="#"
+                  class="w-14 h-14 sm:w-24 sm:h-24 bg-white border border-primary-600 text-primary-600 rounded-full flex items-center justify-center hover:border-primary-600 hover:text-primary-600 transition-colors duration-200"
+                >
+                  <svg
+                    class="w-8 h-8 sm:w-11 sm:h-11"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <!-- Facebook -->
+                <a
+                  href="#"
+                  class="w-14 h-14 sm:w-24 sm:h-24 bg-white border border-primary-600 text-primary-600 rounded-full flex items-center justify-center hover:border-primary-600 hover:text-primary-600 transition-colors duration-200"
+                >
+                  <svg
+                    class="w-8 h-8 sm:w-11 sm:h-11"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    />
+                  </svg>
+                </a>
+                <!-- Twitter/X -->
+                <a
+                  href="#"
+                  class="w-14 h-14 sm:w-24 sm:h-24 bg-white border border-primary-600 text-primary-600 rounded-full flex items-center justify-center hover:border-primary-600 hover:text-primary-600 transition-colors duration-200"
+                >
+                  <svg
+                    class="w-8 h-8 sm:w-11 sm:h-11"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Right Content - Leader Image with Quote -->
+          <div class="order-1 md:order-2">
+            <!-- Leader Image -->
+            <div class="relative flex justify-center md:justify-end z-10 mb-8">
+              <div class="max-w-md mx-auto md:mx-0">
+                <img
+                  src="public/leader-1.jpg"
+                  alt="Dr. Mohamed Elmetwally"
+                  class="leader-image w-full h-full object-contain rounded-2xl"
+                />
+              </div>
+              <!-- Dots Background -->
+              <div
+                class="absolute -top-6 -right-2 sm:-right-6 w-32 h-32 opacity-80 z-0"
+              >
+                <img
+                  src="public/dots.svg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div
+                class="bg-primary-600 p-10 rounded-[20px] w-[90%] md:w-auto max-w-full md:max-w-sm absolute -bottom-20 md:-bottom-12 left-1/2 -translate-x-1/2 md:-translate-x-0 md:-left-32 z-0"
+              >
+                <div class="relative h-[72px]">
+                  <img
+                    src="public/Quotes.svg"
+                    alt="Quote Icon"
+                    class="absolute top-0 left-0 w-14 h-14"
+                  />
+                </div>
+                <p class="leader-quote text-white text-lg sm:text-xl">
+                  Our mission goes beyond products, we dream of a future where
+                  every Egyptian home has access to trusted supplements
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
+      aria-label="Scroll to top"
+      title="Scroll to top"
+    >
+      <!-- Arrow Up Icon -->
+      <svg
+        class="w-6 h-6 transform group-hover:-translate-y-0.5 transition-transform duration-200"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -244,12 +244,6 @@ html {
 
 /* Leaders Section Styles */
 
-@media (min-width: 1680px) {
-  .leaders-grid {
-    top: 17rem;
-  }
-}
-
 .leaders-section {
   background: linear-gradient(135deg, #0b0070 0%, #090060 100%);
 }

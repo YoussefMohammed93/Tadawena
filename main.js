@@ -2,6 +2,45 @@
  * Main JavaScript file for Tadawena website
  */
 
+/**
+ * Smooth Scroll Navigation Class
+ */
+class SmoothScrollNavigation {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    // Handle all navigation links (both desktop and mobile)
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        this.scrollToSection(targetId);
+      }
+    });
+  }
+
+  scrollToSection(sectionId) {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      // Calculate offset to account for fixed header
+      const headerHeight = 80; // Approximate header height
+      const targetPosition = targetSection.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+}
+
 class MobileMenu {
   constructor() {
     this.isOpen = false;
@@ -49,19 +88,19 @@ class MobileMenu {
         <!-- Menu Items -->
         <nav class="flex-1 px-6 py-6">
           <div class="space-y-4">
-            <a href="#" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <a href="#our-company" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Our Company
             </a>
-            <a href="#" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <a href="#leaders" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Meet Our Leaders
             </a>
-            <a href="#" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <a href="#products" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Products
             </a>
-            <a href="#" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <a href="#news" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Latest News
             </a>
-            <a href="#" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <a href="#contact" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Contact Us
             </a>
           </div>
@@ -412,6 +451,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (oldMobileMenu) {
     oldMobileMenu.remove();
   }
+
+  // Initialize smooth scroll navigation
+  new SmoothScrollNavigation();
 
   // Initialize new mobile menu
   new MobileMenu();

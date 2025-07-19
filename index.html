@@ -18,7 +18,9 @@
           extend: {
             colors: {
               primary: {
+                500 : "#3725D6",
                 600: "#0B0070",
+                900: "#0B0070"
               },
               neutral: {
                 800: "#5A5858",
@@ -35,6 +37,19 @@
         },
       };
     </script>
+    <style>
+      /* Smooth scrolling for the entire page */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Ensure smooth scrolling works on all browsers */
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -49,28 +64,28 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-8">
               <a
-                href="#"
-                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                href="#our-company"
+                class="nav-link text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
                 >Our Company</a
               >
               <a
-                href="#"
-                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                href="#leaders"
+                class="nav-link text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
                 >Meet Our Leaders</a
               >
               <a
-                href="#"
-                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                href="#products"
+                class="nav-link text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
                 >Products</a
               >
               <a
-                href="#"
-                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                href="#news"
+                class="nav-link text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
                 >Latest News</a
               >
               <a
-                href="#"
-                class="text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
+                href="#contact"
+                class="nav-link text-primary-600 hover:text-primary-900 px-3 py-2 text-lg transition-colors"
                 >Contact Us</a
               >
             </div>
@@ -106,6 +121,7 @@
     </header>
     <!-- Hero Section -->
     <section
+      id="our-company"
       class="relative overflow-hidden min-h-screen"
       style="
         background-image: url('public/hero-bg.png');
@@ -116,7 +132,7 @@
     >
       <!-- Background overlay for better text readability -->
       <div class="absolute inset-0 bg-black bg-opacity-10"></div>
-      <div class="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-32 sm:pt-24">
+      <div class="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-32 sm:pt-24 min-h-screen flex items-center justify-center">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center"
         >
@@ -336,7 +352,8 @@
       </div>
     </section>
     <!-- Leaders Section -->
-    <section class="bg-background-100 pt-4">
+    <section id="leaders" class="bg-background-100 pt-4 pb-16">
+      <!-- Header Section -->
       <div class="min-h-[40vh] relative flex items-center justify-center bg-primary-600">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Section Title -->
@@ -346,85 +363,230 @@
             </h2>
           </div>
         </div>
-        <div class="leaders-grid w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 absolute top-64">
-          <!-- Leaders Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            <!-- Leader 1 - Dr. Mohamed Elmetwally -->
-            <a href="/leader-info.html?id=1" class="group cursor-pointer">
-              <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <!-- Leader Image -->
-                <div class="aspect-[10/16] overflow-hidden">
+      </div>
+
+      <!-- Leaders Grid Section -->
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
+        <!-- Leaders Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <!-- Leader 1 - Dr. Mohamed Elmetwally -->
+          <a href="/leader-info.html?id=1" class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <!-- Leader Image -->
+              <div class="aspect-[10/16] overflow-hidden">
+                <img
+                  src="public/leader-1.jpg"
+                  alt="Dr. Mohamed Elmetwally"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <!-- Leader Info Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
+                <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
+                  Dr. Mohamed Elmetwally
+                </h3>
+                <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
+                  General Manager
+                </p>
+              </div>
+
+              <!-- Hover Effect Overlay -->
+              <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </a>
+          <!-- Leader 2 - Dr. Mohamed Elsadaany -->
+          <a href="/leader-info.html?id=2" class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <!-- Leader Image -->
+              <div class="aspect-[10/16] overflow-hidden">
+                <img
+                  src="public/leader-2.jpg"
+                  alt="Dr. Mohamed Elsadaany"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <!-- Leader Info Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
+                <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
+                Dr. Mohamed Elsadaany
+                </h3>
+                <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
+                  General Manager
+                </p>
+              </div>
+
+              <!-- Hover Effect Overlay -->
+              <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </a>
+          <!-- Leader 3 - Dr. Ahmed Elmongy -->
+          <a href="/leader-info.html?id=3" class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <!-- Leader Image -->
+              <div class="aspect-[10/16] overflow-hidden">
+                <img
+                  src="public/leader-3.jpg"
+                  alt="Dr. Ahmed Elmongy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <!-- Leader Info Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
+                <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
+                Dr. Ahmed Elmongy
+                </h3>
+                <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
+                  Area Manager
+                </p>
+              </div>
+
+              <!-- Hover Effect Overlay -->
+              <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Latest News Section -->
+    <section id="news" class="news-section relative py-16 bg-background-100">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex justify-between items-center mb-12">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 font-ovo">
+            Latest News
+          </h2>
+          <a
+            href="/news"
+            class="text-primary-500 hover:text-primary-600 text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group"
+          >
+            See all
+            <svg class="w-5 h-5 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>  
+          </a>
+        </div>
+        <!-- News Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Main Featured Article -->
+          <div class="lg:row-span-2">
+            <a href="news.html" class="group block h-full">
+              <div class="relative overflow-hidden rounded-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col -mt-3">
+                <!-- Main Article Image -->
+                <div class="flex-1 overflow-hidden relative min-h-[400px] lg:min-h-[500px]">
                   <img
-                    src="public/leader-1.jpg"
-                    alt="Dr. Mohamed Elmetwally"
+                    src="public/news-1.jpg"
+                    alt="A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard El-Golf Celebration"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                </div>
-
-                <!-- Leader Info Overlay -->
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
-                    Dr. Mohamed Elmetwally
-                  </h3>
-                  <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
-                    General Manager
-                  </p>
+                  <!-- Main Article Content Overlay -->
+                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 lg:p-8">
+                    <h3 class="text-white text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-3 font-ovo">
+                      A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard El-Golf Celebration
+                    </h3>
+                  </div>
                 </div>
 
                 <!-- Hover Effect Overlay -->
-                <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 bg-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </a>
-            <!-- Leader 2 - Dr. Mohamed Elsadaany -->
-            <a href="/leader-info.html?id=2" class="group cursor-pointer">
-              <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <!-- Leader Image -->
-                <div class="aspect-[10/16] overflow-hidden">
+          </div>
+          <!-- Side Articles -->
+          <div class="flex flex-col justify-between gap-6 lg:gap-8">
+            <!-- Article 1 -->
+            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
+              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+                <!-- Article Image -->
+                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
                   <img
-                    src="public/leader-2.jpg"
-                    alt="Dr. Mohamed Elsadaany"
+                    src="public/news-4.jpg"
+                    alt="Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-
-                <!-- Leader Info Overlay -->
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
-                  Dr. Mohamed Elsadaany
-                  </h3>
-                  <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
-                    General Manager
-                  </p>
+                <!-- Article Content -->
+                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                      Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory
+                    </h3>
+                    <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
+                      <img src="public/clock.svg" alt="clock" width="20" height="20"/>
+                      <span>July 12, 2025</span>
+                    </p>
+                  </div>
+                  <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
+                    <span class="text-sm lg:text-base font-medium">Read More</span>
+                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </div>
                 </div>
-
-                <!-- Hover Effect Overlay -->
-                <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </a>
-            <!-- Leader 3 - Dr. Ahmed Elmongy -->
-            <a href="/leader-info.html?id=3" class="group cursor-pointer">
-              <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <!-- Leader Image -->
-                <div class="aspect-[10/16] overflow-hidden">
+            <!-- Article 2 -->
+            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
+              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+                <!-- Article Image -->
+                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
                   <img
-                    src="public/leader-3.jpg"
-                    alt="Dr. Ahmed Elmongy"
+                    src="public/news-5.jpg"
+                    alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-
-                <!-- Leader Info Overlay -->
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
-                  Dr. Ahmed Elmongy
-                  </h3>
-                  <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
-                    Area Manager
-                  </p>
+                <!-- Article Content -->
+                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                      Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025
+                    </h3>
+                    <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
+                      <img src="public/clock.svg" alt="clock" width="20" height="20"/>
+                      <span>June 1, 2025</span>
+                    </p>
+                  </div>
+                  <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
+                    <span class="text-sm lg:text-base font-medium">Read More</span>
+                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </div>
                 </div>
-
-                <!-- Hover Effect Overlay -->
-                <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </a>
+            <!-- Article 3 -->
+            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
+              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+                <!-- Article Image -->
+                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
+                  <img
+                    src="public/news-6.jpg"
+                    alt="Faith, Food, and Fulfillment: Tadawena's Ramadan Iftar & Employee Awards Night"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <!-- Article Content -->
+                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                    Faith, Food, and Fulfillment: Tadawena’s Ramadan Iftar & Employee Awards Night
+                  </h3>
+                  <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
+                    <img src="public/clock.svg" alt="clock" width="20" height="20"/>
+                    <span>April 22, 2025</span>
+                  </p>
+                  </div>
+                  <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
+                    <span class="text-sm lg:text-base font-medium">Read More</span>
+                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </a>
           </div>

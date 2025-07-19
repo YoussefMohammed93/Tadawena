@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest News - Tadawena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ovo&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                500: "#3725D6",
+                600: "#0B0070",
+                900: "#0B0070",
+              },
+              neutral: {
+                800: "#5A5858",
+              },
+              background: {
+                100: "#fafbfc",
+              },
+            },
+            fontFamily: {
+              ovo: ["Ovo", "serif"],
+              "open-sans": ["Open Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background-100">
+    <!-- Header with Logo -->
+    <header class="bg-background-100">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center">
+            <img src="public/logo.png" alt="Tadawena" class="h-12 w-auto" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-background-100">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14">
+        <div class="flex items-center space-x-2 text-neutral-800">
+          <a
+            href="/"
+            class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
+            >Home</a
+          >
+          <svg
+            class="w-4 h-4 text-neutral-800"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-primary-600 font-medium text-base sm:text-lg"
+            >Latest News</span
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Article Header -->
+      <article class="bg-background-100 rounded-lg overflow-hidden">
+        <!-- Article Title -->
+        <div class="pt-8 pb-4">
+          <h1
+            class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4 font-ovo"
+          >
+            A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard
+            El-Golf Celebration
+          </h1>
+
+          <!-- Date -->
+          <div class="flex items-center gap-2 text-base sm:text-lg">
+            <img src="public/clock.svg" alt="clock" width="24" height="24" />
+            <span class="text-neutral-800">July 12, 2025</span>
+          </div>
+        </div>
+
+        <!-- Main Article Image -->
+        <div class="py-6">
+          <div class="aspect-video w-full overflow-hidden rounded-2xl sm:rounded-[48px]">
+            <img
+              src="public/news-1.jpg"
+              alt="Tadawena team with orphaned children at Ard El-Golf celebration"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="pt-8">
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
+              Today felt like a celebration for us as we met with the orphaned
+              children.
+            </p>
+            <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-8">
+              As part of our social responsibility delegation, the Tadawena for
+              Nutritional Supplements took part in the
+              #Library_Cultural_Center_Ard_El-Golf event celebrating Orphan's
+              Day, aiming to bring joy and happiness to the hearts of the
+              children.
+            </p>
+            <!-- Additional Images Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 md:h-[450px]">
+              <div
+                class="h-48 md:h-full overflow-hidden rounded-2xl sm:rounded-[20px] md:col-span-2"
+              >
+                <img
+                  src="public/news-2.jpg"
+                  alt="Tadawena team group photo"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="h-48 md:h-full overflow-hidden rounded-2xl sm:rounded-[20px] md:col-span-1"
+              >
+                <img
+                  src="public/news-3.jpg"
+                  alt="Children's activities and gifts"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
+      aria-label="Scroll to top"
+      title="Scroll to top"
+    >
+      <!-- Arrow Up Icon -->
+      <svg
+        class="w-6 h-6 transform group-hover:-translate-y-0.5 transition-transform duration-200"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>

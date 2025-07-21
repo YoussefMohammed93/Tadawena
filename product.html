@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latest News - Tadawena</title>
+    <title>Product Details - Tadawena</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,106 +49,203 @@
         </div>
       </div>
     </header>
-    <!-- Breadcrumb Navigation -->
-    <nav class="bg-background-100">
-      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14">
-        <div class="flex items-center space-x-2 text-neutral-800">
-          <a
-            href="/"
-            class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
-            >Home</a
-          >
-          <svg
-            class="w-4 h-4 text-neutral-800"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <span class="text-primary-600 font-medium text-base sm:text-lg"
-            >Latest News</span
-          >
-        </div>
-      </div>
-    </nav>
     <!-- Main Content -->
     <main class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <!-- Article Header -->
-      <article class="bg-background-100 rounded-lg overflow-hidden">
-        <!-- Article Title -->
-        <div class="pt-8 pb-4">
-          <h1
-            class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4 font-ovo"
-          >
-            A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard
-            El-Golf Celebration
-          </h1>
-
-          <!-- Date -->
-          <div class="flex items-center gap-2 text-base sm:text-lg">
-            <img src="public/clock.svg" alt="clock" width="24" height="24" />
-            <span class="text-neutral-800">July 12, 2025</span>
-          </div>
-        </div>
-
-        <!-- Main Article Image -->
-        <div class="py-6">
-          <div
-            class="aspect-video w-full overflow-hidden rounded-2xl sm:rounded-[48px]"
-          >
+      <!-- Product Layout: Image Left, Content Right -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start min-h-screen"
+      >
+        <!-- Left Side - Product Image -->
+        <div class="lg:sticky lg:top-8">
+          <div class="aspect-[5/4] w-full overflow-hidden">
             <img
-              src="public/news-1.jpg"
-              alt="Tadawena team with orphaned children at Ard El-Golf celebration"
+              src="public/placeholder.png"
+              alt="Product Image"
               class="w-full h-full object-cover"
+              id="product-main-image"
             />
           </div>
         </div>
 
-        <!-- Article Content -->
-        <div class="pt-8">
-          <div class="prose prose-lg max-w-none">
-            <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-              Today felt like a celebration for us as we met with the orphaned
-              children.
-            </p>
-            <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-8">
-              As part of our social responsibility delegation, the Tadawena for
-              Nutritional Supplements took part in the
-              #Library_Cultural_Center_Ard_El-Golf event celebrating Orphan's
-              Day, aiming to bring joy and happiness to the hearts of the
-              children.
-            </p>
-            <!-- Additional Images Grid -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 md:h-[450px]"
-            >
-              <div
-                class="h-48 md:h-full overflow-hidden rounded-2xl sm:rounded-[20px] md:col-span-2"
+        <!-- Right Side - Product Content -->
+        <div class="space-y-8 pt-6 sm:pt-14">
+          <!-- Breadcrumb Navigation -->
+          <nav>
+            <div class="flex items-center space-x-2 text-neutral-800">
+              <a
+                href="/"
+                class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
+                >Home</a
               >
-                <img
-                  src="public/news-2.jpg"
-                  alt="Tadawena team group photo"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                class="h-48 md:h-full overflow-hidden rounded-2xl sm:rounded-[20px] md:col-span-1"
+              <svg
+                class="w-4 h-4 text-neutral-800"
+                fill="currentColor"
+                viewBox="0 0 20 20"
               >
-                <img
-                  src="public/news-3.jpg"
-                  alt="Children's activities and gifts"
-                  class="w-full h-full object-cover"
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
                 />
-              </div>
+              </svg>
+              <a
+                href="products.html"
+                class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
+                >Products</a
+              >
+              <svg
+                class="w-4 h-4 text-neutral-800"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span
+                class="text-primary-600 font-medium text-base sm:text-lg"
+                id="product-breadcrumb"
+                >Nelex 1000 IU</span
+              >
             </div>
+          </nav>
+
+          <!-- Product Title -->
+          <div>
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-600 leading-tight mb-4 font-ovo"
+              id="product-title"
+            >
+              Nelex 1000 IU
+            </h1>
+          </div>
+
+          <!-- Active Ingredients Section -->
+          <div>
+            <h3
+              class="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-ovo"
+            >
+              Active Ingredients
+            </h3>
+            <p
+              class="text-base sm:text-lg text-neutral-800 leading-relaxed"
+              id="active-ingredients"
+            >
+              Vitamin D3 - Cholecalciferol
+            </p>
+          </div>
+
+          <!-- Drug Usage Indications Section -->
+          <div>
+            <h3
+              class="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-ovo"
+            >
+              Drug Usage Indications:
+            </h3>
+            <p
+              class="text-base sm:text-lg text-neutral-800 leading-relaxed"
+              id="usage-indications"
+            >
+              Used To Treat Vitamin D Insufficiency Or Deficiency, Osteoporosis
+              Prevention In Case Of Hypoparathyroidism & Vitamin D Insufficiency
+              Or Deficiency In Patients With Chronic Kidney Disease.
+            </p>
           </div>
         </div>
-      </article>
+      </div>
     </main>
+    <!-- JavaScript for Dynamic Content -->
+    <script>
+      // Product data
+      const products = {
+        1: {
+          title: "Nelex 1000 IU",
+          subtitle: "Vitamin D3 - Cholecalciferol",
+          activeIngredients: "Vitamin D3 - Cholecalciferol",
+          usageIndications:
+            "Used To Treat Vitamin D Insufficiency Or Deficiency, Osteoporosis Prevention In Case Of Hypoparathyroidism & Vitamin D Insufficiency Or Deficiency In Patients With Chronic Kidney Disease.",
+          dosage: "1000 IU per tablet",
+          form: "Tablets",
+          package: "30 tablets per bottle",
+        },
+        2: {
+          title: "Vitamin B Complex",
+          subtitle: "Essential B Vitamins",
+          activeIngredients: "B1, B2, B3, B5, B6, B7, B9, B12",
+          usageIndications:
+            "Complete B-Complex formula supporting energy metabolism and nervous system health. Contains all eight essential B vitamins for optimal cellular function and energy production.",
+          dosage: "One tablet daily",
+          form: "Tablets",
+          package: "60 tablets per bottle",
+        },
+        3: {
+          title: "Omega-3 Fish Oil",
+          subtitle: "EPA & DHA Essential Fatty Acids",
+          activeIngredients:
+            "EPA (Eicosapentaenoic Acid), DHA (Docosahexaenoic Acid)",
+          usageIndications:
+            "High-quality fish oil supplement supporting heart and brain health with pure EPA & DHA essential fatty acids sourced from sustainable fisheries.",
+          dosage: "1000mg per softgel",
+          form: "Softgels",
+          package: "90 softgels per bottle",
+        },
+        4: {
+          title: "Magnesium Plus",
+          subtitle: "Essential Mineral Support",
+          activeIngredients: "Magnesium Oxide, Magnesium Citrate",
+          usageIndications:
+            "High-absorption magnesium supplement supporting muscle function, bone health, and cardiovascular wellness with enhanced bioavailability.",
+          dosage: "400mg per tablet",
+          form: "Tablets",
+          package: "120 tablets per bottle",
+        },
+        5: {
+          title: "Calcium Complete",
+          subtitle: "Bone Health Support",
+          activeIngredients: "Calcium Carbonate, Vitamin D3, Vitamin K2",
+          usageIndications:
+            "Advanced calcium formula with Vitamin D3 and K2 for optimal bone health and calcium absorption throughout all life stages.",
+          dosage: "600mg calcium per tablet",
+          form: "Tablets",
+          package: "90 tablets per bottle",
+        },
+        6: {
+          title: "Daily Multivitamin",
+          subtitle: "Complete Daily Nutrition",
+          activeIngredients:
+            "Vitamins A, C, D, E, K, B-Complex, Essential Minerals",
+          usageIndications:
+            "Comprehensive multivitamin and mineral formula providing essential nutrients for daily health maintenance and immune system support.",
+          dosage: "One tablet daily",
+          form: "Tablets",
+          package: "90 tablets per bottle",
+        },
+      };
+
+      // Get product ID from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id") || "1";
+      const product = products[productId] || products["1"];
+
+      // Update page content
+      document.getElementById("product-breadcrumb").textContent = product.title;
+      document.getElementById("product-title").textContent = product.title;
+      document.getElementById("product-subtitle").textContent =
+        product.subtitle;
+      document.getElementById("active-ingredients").textContent =
+        product.activeIngredients;
+      document.getElementById("usage-indications").textContent =
+        product.usageIndications;
+      document.getElementById("product-dosage").textContent = product.dosage;
+      document.getElementById("product-form").textContent = product.form;
+      document.getElementById("product-package").textContent = product.package;
+      document.getElementById("product-main-image").alt = product.title;
+
+      // Update page title
+      document.title = `${product.title} - Tadawena`;
+    </script>
     <!-- Footer -->
     <footer class="bg-background-100 py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-[1320px] mx-auto">

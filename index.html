@@ -427,18 +427,89 @@
       </div>
     </section>
     <!-- Products Section -->
-     <section id="products" class="bg-background-100">
+    <section id="products" class="bg-background-100 py-16">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="flex justify-between items-center mb-12">
           <h2 class="text-4xl md:text-5xl pb-3 lg:text-6xl font-bold text-primary-600 font-ovo relative news-heading-border">
             Products
           </h2>
-          <a href="/products" class="text-primary-500 hover:text-primary-600 underline text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group">See all</a>
+          <a href="products.html" class="text-primary-500 hover:text-primary-600 underline text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group">See all</a>
         </div>
         <!-- Products Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"></div>
-     </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <!-- Product Card 1 -->
+          <a href="/product.html?id=1" class="product-card group block rounded-2xl border border-primary-600 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <!-- Product Image -->
+            <div class="aspect-[4/3] overflow-hidden p-6 pb-2">
+              <img
+                src="public/placeholder.png"
+                alt="Nelex 1000 UI Product"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Product Content -->
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 font-ovo">
+                Nelex 1000 UI
+              </h3>
+              <h4 class="text-lg md:text-xl lg:text-2xl text-[#5A5858]">
+                Vitamin D3 - Cholecalciferol
+              </h4>
+              <p class="text-[#5A5858] text-base md:text-lg leading-relaxed font-light line-clamp-3">
+                Dietary Supplement Tablets Contain Vitamin D3 10000 IU "Cholecalciferol" Used To...
+              </p>
+            </div>
+          </a>
+          <!-- Product Card 2 -->
+          <a href="product.html?id=2" class="product-card group block rounded-2xl border border-primary-600 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <!-- Product Image -->
+            <div class="aspect-[4/3] overflow-hidden p-6 pb-2">
+              <img
+                src="public/placeholder.png"
+                alt="Vitamin B Complex Product"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Product Content -->
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 font-ovo">
+                Vitamin B Complex
+              </h3>
+              <h4 class="text-lg md:text-xl lg:text-2xl text-[#5A5858]">
+                Essential B Vitamins
+              </h4>
+              <p class="text-[#5A5858] text-base md:text-lg leading-relaxed font-light line-clamp-3">
+                Complete B-Complex formula supporting energy metabolism and nervous system health...
+              </p>
+            </div>
+          </a>
+          <!-- Product Card 3 -->
+          <a href="product.html?id=3" class="product-card group block rounded-2xl border border-primary-600 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <!-- Product Image -->
+            <div class="aspect-[4/3] overflow-hidden p-6 pb-2">
+              <img
+                src="public/placeholder.png"
+                alt="Omega-3 Fish Oil Product"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Product Content -->
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 font-ovo">
+                Omega-3 Fish Oil
+              </h3>
+              <h4 class="text-lg md:text-xl lg:text-2xl text-[#5A5858]">
+                EPA & DHA Essential Fatty Acids
+              </h4>
+              <p class="text-[#5A5858] text-base md:text-lg leading-relaxed font-light line-clamp-3">
+                High-quality fish oil supplement supporting heart and brain health with pure EPA & DHA...
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
     <!-- Latest News Section -->
     <section id="news" class="news-section relative py-16 bg-background-100">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -448,7 +519,7 @@
             Latest News
           </h2>
           <a
-            href="/news"
+            href="all-news.html"
             class="text-primary-500 hover:text-primary-600 underline text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group"
           >
             See all

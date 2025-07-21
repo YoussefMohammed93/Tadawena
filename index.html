@@ -426,6 +426,19 @@
         </div>
       </div>
     </section>
+    <!-- Products Section -->
+     <section id="products" class="bg-background-100">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex justify-between items-center mb-12">
+          <h2 class="text-4xl md:text-5xl pb-3 lg:text-6xl font-bold text-primary-600 font-ovo relative news-heading-border">
+            Products
+          </h2>
+          <a href="/products" class="text-primary-500 hover:text-primary-600 underline text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group">See all</a>
+        </div>
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"></div>
+     </section>
     <!-- Latest News Section -->
     <section id="news" class="news-section relative py-16 bg-background-100">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,9 +460,9 @@
           <div class="flex flex-col justify-between gap-6 lg:gap-8">
             <!-- Article 1 -->
             <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
-              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+              <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 bg-white rounded-xl h-full">
                 <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
+                <div class="flex-shrink-0 w-full sm:rounded-r-none sm:w-56 lg:w-64 rounded-b-none sm:rounded-b-xl overflow-hidden rounded-xl rounded-r-none">
                   <img
                     src="public/news-5.jpg"
                     alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
@@ -457,12 +470,12 @@
                   />
                 </div>
                 <!-- Article Content -->
-                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                <div class="flex-1 min-w-0 p-4 sm:pl-0 flex flex-col justify-between">
                   <div class="max-w-3xl">
-                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                    <h3 class="text-[#333232] font-medium text-xl lg:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
                       Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025
                     </h3>
-                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                    <p class="text-[#333232] font-light text-base lg:text-lg my-4">
                       This summer, Tadawena welcomed a talented group of interns eager to learn and grow. Through hands-on experiences, mentorship, and real-world projects, they gained valuable insights into the pharmaceutical and nutrition supplement industry. We believe...
                     </p>
                     <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
@@ -471,7 +484,7 @@
                     </p>
                   </div>
                   <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <span class="text-lg lg:text-xl xl:text-2xl font-medium">Read More</span>
                     <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -481,9 +494,9 @@
             </a>
             <!-- Article 2 -->
             <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
-              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+              <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 bg-white rounded-xl h-full">
                 <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
+                <div class="flex-shrink-0 w-full sm:w-56 lg:w-64 rounded-b-none sm:rounded-b-xl sm:rounded-r-none overflow-hidden rounded-xl rounded-r-none">
                   <img
                     src="public/news-6.jpg"
                     alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
@@ -491,12 +504,12 @@
                   />
                 </div>
                 <!-- Article Content -->
-                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                <div class="flex-1 min-w-0 p-4 sm:pl-0 flex flex-col justify-between">
                   <div class="max-w-3xl">
-                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                    <h3 class="text-[#333232] font-medium text-xl lg:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
                      Faith, Food, and Fulfillment: Tadawena’s Ramadan Iftar & Employee Awards Night
                     </h3>
-                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                    <p class="text-[#333232] font-light text-base lg:text-lg my-4">
                      Tadawena celebrated the spirit of Ramadan with a heartfelt Iftar gathering, bringing our team together in faith and gratitude. The evening honored our employees’ dedication with special awards, recognizing their hard work and achievements.It was a night filled with... 
                     </p>
                     <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
@@ -505,7 +518,7 @@
                     </p>
                   </div>
                   <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <span class="text-lg lg:text-xl xl:text-2xl font-medium">Read More</span>
                     <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -515,22 +528,22 @@
             </a>
             <!-- Article 3 -->
             <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
-              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
-                <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
-                  <img
-                    src="public/news-4.jpg"
-                    alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <!-- Article Content -->
-                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 bg-white rounded-xl h-full">
+                  <!-- Article Image -->
+                  <div class="flex-shrink-0 w-full sm:w-56 lg:w-64 rounded-b-none sm:rounded-b-xl sm:rounded-r-none overflow-hidden rounded-xl rounded-r-none">
+                    <img
+                      src="public/news-4.jpg"
+                      alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <!-- Article Content -->
+                  <div class="flex-1 min-w-0 p-4 sm:pl-0 flex flex-col justify-between">
                   <div class="max-w-3xl">
-                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                    <h3 class="text-[#333232] font-medium text-xl lg:text-2xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
                      Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory
                     </h3>
-                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                    <p class="text-[#333232] font-light text-base lg:text-lg my-4">
                      Step inside Tadawena’s state-of-the-art factory and discover how our high-quality nutritional supplements come to life. From advanced manufacturing processes to rigorous quality control and expert formulation, this exclusive tour reveals our commitment to excellence...
                     </p>
                     <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
@@ -539,7 +552,7 @@
                     </p>
                   </div>
                   <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <span class="text-lg lg:text-xl xl:text-2xl font-medium">Read More</span>
                     <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -551,24 +564,47 @@
         </div>
       </div>
     </section>
-    <!-- Scroll to Top Button -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-[#B89B1B] hover:bg-[#B89B1B]/80 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
-      aria-label="Scroll to top"
-      title="Scroll to top"
-    >
-      <!-- Arrow Up Icon -->
-      <svg
-        class="w-6 h-6 transform group-hover:-translate-y-0.5 transition-transform duration-200"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        viewBox="0 0 24 24"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-      </svg>
-    </button>
+    <!-- Newsletter -->
+    <section class="bg-background-100 pt-12 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Newsletter Image -->
+        <div class="mb-8 lg:mb-12">
+          <img
+            src="public/newsletter.svg"
+            alt="Newsletter Subscription"
+            class="w-full max-w-md sm:max-w-lg mx-auto h-auto object-contain"
+          />
+        </div>
+
+        <!-- Newsletter Text -->
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#333232] mb-8 lg:mb-12 font-ovo leading-tight max-w-4xl mx-auto">
+          Subscribe to our newsletter in order not to miss our latest news!
+        </h2>
+
+        <!-- Newsletter Form -->
+        <div class="flex flex-col sm:flex-row gap-4 max-w-3xl mx-auto">
+          <div class="flex-1 relative">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-[#333232]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <input
+              type="email"
+              placeholder="Write your email here"
+              class="w-full pl-12 pr-4 py-4 border border-[#333232] rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-gray-700 placeholder-[#333232] text-base lg:text-lg"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="bg-primary-600 hover:bg-primary-600/80 text-white py-4 px-4 md:px-20 rounded-lg transition-colors duration-200 text-base lg:text-lg whitespace-nowrap"
+          >
+            Subscribe Now
+          </button>
+        </div>
+      </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-background-100 py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -671,6 +707,24 @@
         </div>
       </div>
     </footer>
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-[#B89B1B] hover:bg-[#B89B1B]/80 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
+      aria-label="Scroll to top"
+      title="Scroll to top"
+    >
+      <!-- Arrow Up Icon -->
+      <svg
+        class="w-6 h-6 transform group-hover:-translate-y-0.5 transition-transform duration-200"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
     <!-- Main JavaScript -->
     <script src="main.js"></script>
   </body>

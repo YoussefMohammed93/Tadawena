@@ -20,16 +20,6 @@ const leadersData = {
       "District Supervisor at Apex where he launched products that are still best-sellers until today!",
     ],
   },
-  3: {
-    id: 3,
-    name: "Dr. Ahmed Elmongy",
-    title: "Area Manager",
-    image: "public/leader-3.jpg",
-    achievements: [
-      "Sales and Marketing Director at Sanofi Kurdistan where he successfully lead both teams to increase the region’s revenue by 50% compared to their last year.",
-      "District Supervisor at Apex where he launched products that are still best-sellers until today!",
-    ],
-  },
 };
 
 // Function to get leader data by ID

@@ -333,3 +333,36 @@ html {
     height: 1.125rem;
   }
 }
+
+/* Custom border for Latest News heading */
+.news-heading-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 30px,
+    #b89b1b 30px,
+    #b89b1b 100%
+  );
+}
+
+.news-heading-border::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #b89b1b 0px,
+    #b89b1b 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}

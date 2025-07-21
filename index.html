@@ -37,19 +37,6 @@
         },
       };
     </script>
-    <style>
-      /* Smooth scrolling for the entire page */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Ensure smooth scrolling works on all browsers */
-      @media (prefers-reduced-motion: no-preference) {
-        html {
-          scroll-behavior: smooth;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- Header -->
@@ -174,7 +161,7 @@
     </section>
     <!-- Partners Section - Infinite Scroll -->
     <section class="py-16 overflow-hidden bg-background-100">
-      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="px-4 sm:px-6 lg:px-8">
         <!-- Infinite Scroll Container -->
         <div class="partners-scroll-container">
           <div class="partners-scroll-track">
@@ -304,49 +291,64 @@
       <div class="pt-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 lg:gap-10">
           <!-- Mission Card -->
-          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl">
-            <!-- Icon Container -->
-            <div class="flex justify-center mb-6">
-              <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
-                <img src="public/mission.png" alt="mission"/>
+          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg">
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-primary-600/5 transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <!-- Content -->
+            <div class="relative z-10">
+              <!-- Icon Container -->
+              <div class="flex justify-center mb-6">
+                <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
+                  <img src="public/mission.png" alt="mission"/>
+                </div>
               </div>
+              <!-- Title -->
+              <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Mission</h3>
+              <!-- Description -->
+              <p class="text-neutral-800 leading-relaxed text-xl font-light">
+                Our mission is to empower healthier lifestyles by providing reliable, accessible solutions that help prevent deficiencies and promote long-term well-being
+              </p>
             </div>
-            <!-- Title -->
-            <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Mission</h3>
-            <!-- Description -->
-            <p class="text-neutral-800 leading-relaxed text-xl font-light">
-              Our mission is to empower healthier lifestyles by providing reliable, accessible solutions that help prevent deficiencies and promote long-term well-being
-            </p>
           </div>
           <!-- Vision Card -->
-          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl">
-            <!-- Icon Container -->
-            <div class="flex justify-center mb-6">
-              <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
-                <img src="public/vision.png" alt="vision"/>
+          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg">
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-primary-600/5 transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <!-- Content -->
+            <div class="relative z-10">
+              <!-- Icon Container -->
+              <div class="flex justify-center mb-6">
+                <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
+                  <img src="public/vision.png" alt="vision"/>
+                </div>
               </div>
+              <!-- Title -->
+              <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Vision</h3>
+              <!-- Description -->
+              <p class="text-neutral-800 leading-relaxed text-xl font-light">
+                Our goal is to provide safe, effective food supplements that support daily wellness and prevent deficiencies, helping individuals and families lead healthier lives with confidence.
+              </p>
             </div>
-            <!-- Title -->
-            <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Vision</h3>
-            <!-- Description -->
-            <p class="text-neutral-800 leading-relaxed text-xl font-light">
-              Our goal is to provide safe, effective food supplements that support daily wellness and prevent deficiencies, helping individuals and families lead healthier lives with confidence.
-            </p>
           </div>
           <!-- Goals Card -->
-          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl">
-            <!-- Icon Container -->
-            <div class="flex justify-center mb-6">
-              <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
-                <img src="public/goals.png" alt="goals"/>
+          <div class="bg-background-100 flex flex-col items-center justify-center text-center border border-primary-600 bg-white p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg">
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-primary-600/5 transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <!-- Content -->
+            <div class="relative z-10">
+              <!-- Icon Container -->
+              <div class="flex justify-center mb-6">
+                <div class="w-40 h-40 bg-primary-600 rounded-full flex items-center justify-center">
+                  <img src="public/goals.png" alt="goals"/>
+                </div>
               </div>
+              <!-- Title -->
+              <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Goals</h3>
+              <!-- Description -->
+              <p class="text-neutral-800 leading-relaxed text-xl font-light">
+                To become a leading force by providing trusted and innovative food supplements that empower individuals and families to live healthier, stronger lives—every day
+              </p>
             </div>
-            <!-- Title -->
-            <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-800 mb-4">Goals</h3>
-            <!-- Description -->
-            <p class="text-neutral-800 leading-relaxed text-xl font-light">
-              To become a leading force by providing trusted and innovative food supplements that empower individuals and families to live healthier, stronger lives—every day
-            </p>
           </div>
         </div>
       </div>
@@ -366,9 +368,9 @@
       </div>
 
       <!-- Leaders Grid Section -->
-      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
+      <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
         <!-- Leaders Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <!-- Leader 1 - Dr. Mohamed Elmetwally -->
           <a href="/leader-info.html?id=1" class="group cursor-pointer">
             <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
@@ -421,117 +423,33 @@
               <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </a>
-          <!-- Leader 3 - Dr. Ahmed Elmongy -->
-          <a href="/leader-info.html?id=3" class="group cursor-pointer">
-            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <!-- Leader Image -->
-              <div class="aspect-[10/16] overflow-hidden">
-                <img
-                  src="public/leader-3.jpg"
-                  alt="Dr. Ahmed Elmongy"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-
-              <!-- Leader Info Overlay -->
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                <h3 class="text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-1">
-                Dr. Ahmed Elmongy
-                </h3>
-                <p class="text-white/90 text-center text-lg md:text-xl lg:text-2xl font-light">
-                  Area Manager
-                </p>
-              </div>
-
-              <!-- Hover Effect Overlay -->
-              <div class="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          </a>
         </div>
       </div>
     </section>
     <!-- Latest News Section -->
     <section id="news" class="news-section relative py-16 bg-background-100">
-      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="flex justify-between items-center mb-12">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 font-ovo">
+          <h2 class="text-4xl md:text-5xl pb-3 lg:text-6xl font-bold text-primary-600 font-ovo relative news-heading-border">
             Latest News
           </h2>
           <a
             href="/news"
-            class="text-primary-500 hover:text-primary-600 text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group"
+            class="text-primary-500 hover:text-primary-600 underline text-lg md:text-xl lg:text-2xl font-semibold transition-colors duration-200 flex items-center gap-2 group"
           >
             See all
-            <svg class="w-5 h-5 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-            </svg>  
           </a>
         </div>
         <!-- News Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Main Featured Article -->
-          <div class="lg:row-span-2">
-            <a href="news.html" class="group block h-full">
-              <div class="relative overflow-hidden rounded-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col -mt-3">
-                <!-- Main Article Image -->
-                <div class="flex-1 overflow-hidden relative min-h-[400px] lg:min-h-[500px]">
-                  <img
-                    src="public/news-1.jpg"
-                    alt="A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard El-Golf Celebration"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <!-- Main Article Content Overlay -->
-                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 lg:p-8">
-                    <h3 class="text-white text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-3 font-ovo">
-                      A Heartwarming Day: Tadawena Team Brings Smiles to Orphans in Ard El-Golf Celebration
-                    </h3>
-                  </div>
-                </div>
-
-                <!-- Hover Effect Overlay -->
-                <div class="absolute inset-0 bg-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </a>
-          </div>
+        <div class="w-full">
           <!-- Side Articles -->
           <div class="flex flex-col justify-between gap-6 lg:gap-8">
             <!-- Article 1 -->
-            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
+            <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
               <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
                 <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
-                  <img
-                    src="public/news-4.jpg"
-                    alt="Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <!-- Article Content -->
-                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
-                  <div>
-                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
-                      Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory
-                    </h3>
-                    <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
-                      <img src="public/clock.svg" alt="clock" width="20" height="20"/>
-                      <span>July 12, 2025</span>
-                    </p>
-                  </div>
-                  <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-sm lg:text-base font-medium">Read More</span>
-                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <!-- Article 2 -->
-            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
-              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
-                <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
+                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
                   <img
                     src="public/news-5.jpg"
                     alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
@@ -540,18 +458,55 @@
                 </div>
                 <!-- Article Content -->
                 <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
-                  <div>
-                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                  <div class="max-w-3xl">
+                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
                       Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025
                     </h3>
+                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                      This summer, Tadawena welcomed a talented group of interns eager to learn and grow. Through hands-on experiences, mentorship, and real-world projects, they gained valuable insights into the pharmaceutical and nutrition supplement industry. We believe...
+                    </p>
                     <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
                       <img src="public/clock.svg" alt="clock" width="20" height="20"/>
                       <span>June 1, 2025</span>
                     </p>
                   </div>
                   <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-sm lg:text-base font-medium">Read More</span>
-                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Article 2 -->
+            <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
+              <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
+                <!-- Article Image -->
+                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
+                  <img
+                    src="public/news-6.jpg"
+                    alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <!-- Article Content -->
+                <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
+                  <div class="max-w-3xl">
+                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                     Faith, Food, and Fulfillment: Tadawena’s Ramadan Iftar & Employee Awards Night
+                    </h3>
+                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                     Tadawena celebrated the spirit of Ramadan with a heartfelt Iftar gathering, bringing our team together in faith and gratitude. The evening honored our employees’ dedication with special awards, recognizing their hard work and achievements.It was a night filled with... 
+                    </p>
+                    <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
+                      <img src="public/clock.svg" alt="clock" width="20" height="20"/>
+                      <span>April 22, 2025</span>
+                    </p>
+                  </div>
+                  <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
+                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
                   </div>
@@ -559,30 +514,33 @@
               </div>
             </a>
             <!-- Article 3 -->
-            <a href="news.html" class="group block border rounded-xl sm:border-none flex-1">
+            <a href="news.html" class="group block border shadow-sm rounded-xl sm:border-none flex-1">
               <div class="flex gap-4 lg:gap-6 bg-white rounded-xl h-full">
                 <!-- Article Image -->
-                <div class="flex-shrink-0 w-32 lg:w-40 overflow-hidden rounded-xl rounded-r-none">
+                <div class="flex-shrink-0 w-32 lg:w-64 overflow-hidden rounded-xl rounded-r-none">
                   <img
-                    src="public/news-6.jpg"
-                    alt="Faith, Food, and Fulfillment: Tadawena's Ramadan Iftar & Employee Awards Night"
+                    src="public/news-4.jpg"
+                    alt="Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <!-- Article Content -->
                 <div class="flex-1 min-w-0 p-4 pl-0 flex flex-col justify-between">
-                  <div>
-                    <h3 class="text-black text-lg lg:text-xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
-                    Faith, Food, and Fulfillment: Tadawena’s Ramadan Iftar & Employee Awards Night
-                  </h3>
-                  <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
-                    <img src="public/clock.svg" alt="clock" width="20" height="20"/>
-                    <span>April 22, 2025</span>
-                  </p>
+                  <div class="max-w-3xl">
+                    <h3 class="text-[#333232] font-medium text-lg lg:text-xl xl:text-2xl leading-tight mb-2 group-hover:text-primary-700 transition-colors duration-200">
+                     Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory
+                    </h3>
+                    <p class="text-[#333232] font-light text-base lg:text-lg leading-3 mb-4">
+                     Step inside Tadawena’s state-of-the-art factory and discover how our high-quality nutritional supplements come to life. From advanced manufacturing processes to rigorous quality control and expert formulation, this exclusive tour reveals our commitment to excellence...
+                    </p>
+                    <p class="flex items-center gap-2 text-neutral-800 text-sm lg:text-base mb-2">
+                      <img src="public/clock.svg" alt="clock" width="20" height="20"/>
+                      <span>July 12, 2024</span>
+                    </p>
                   </div>
                   <div class="flex items-center text-primary-900 group-hover:text-primary-600 transition-colors duration-200">
-                    <span class="text-sm lg:text-base font-medium">Read More</span>
-                    <svg class="w-4 h-4 ml-2 mt-[3px] transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <span class="text-base lg:text-lg xl:text-xl font-medium">Read More</span>
+                    <svg class="w-5 h-5 ml-2 mt-1.5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
                   </div>
@@ -596,7 +554,7 @@
     <!-- Scroll to Top Button -->
     <button
       id="scrollToTopBtn"
-      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
+      class="scroll-to-top-btn fixed bottom-8 right-8 w-14 h-14 bg-[#B89B1B] hover:bg-[#B89B1B]/80 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out opacity-0 invisible transform translate-y-4 z-50 flex items-center justify-center group"
       aria-label="Scroll to top"
       title="Scroll to top"
     >
@@ -613,7 +571,7 @@
     </button>
     <!-- Footer -->
     <footer class="bg-background-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <!-- Left Section -->
           <div class="space-y-6">

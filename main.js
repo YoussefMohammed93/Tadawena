@@ -3,6 +3,105 @@
  */
 
 /**
+ * Contact Form Handler Class
+ */
+class ContactFormHandler {
+  constructor() {
+    this.form = document.getElementById("contactForm");
+    this.init();
+  }
+
+  init() {
+    if (this.form) {
+      this.bindEvents();
+    }
+  }
+
+  bindEvents() {
+    this.form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this.handleSubmit();
+    });
+  }
+
+  handleSubmit() {
+    const formData = new FormData(this.form);
+    const data = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    // Basic validation
+    if (!this.validateForm(data)) {
+      return;
+    }
+
+    // Show success message (in a real app, you'd send this to a server)
+    this.showSuccessMessage();
+    this.form.reset();
+  }
+
+  validateForm(data) {
+    if (!data.fullName.trim()) {
+      this.showError("Please enter your full name");
+      return false;
+    }
+
+    if (!data.email.trim() || !this.isValidEmail(data.email)) {
+      this.showError("Please enter a valid email address");
+      return false;
+    }
+
+    if (!data.message.trim()) {
+      this.showError("Please enter your message");
+      return false;
+    }
+
+    return true;
+  }
+
+  isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  showError(message) {
+    // Create or update error message
+    this.removeExistingMessage();
+    const errorDiv = document.createElement("div");
+    errorDiv.className =
+      "bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4";
+    errorDiv.textContent = message;
+    this.form.insertBefore(errorDiv, this.form.firstChild);
+  }
+
+  showSuccessMessage() {
+    this.removeExistingMessage();
+    const successDiv = document.createElement("div");
+    successDiv.className =
+      "bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4";
+    successDiv.textContent =
+      "Thank you for your message! We'll get back to you soon.";
+    this.form.insertBefore(successDiv, this.form.firstChild);
+
+    // Remove success message after 5 seconds
+    setTimeout(() => {
+      this.removeExistingMessage();
+    }, 5000);
+  }
+
+  removeExistingMessage() {
+    const existingMessage = this.form.querySelector(
+      ".bg-red-100, .bg-green-100"
+    );
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+  }
+}
+
+/**
  * Smooth Scroll Navigation Class
  */
 class SmoothScrollNavigation {
@@ -463,6 +562,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize scroll to top button
   new ScrollToTopButton();
+
+  // Initialize contact form handler
+  new ContactFormHandler();
 });
 
 // Additional utility functions
@@ -494,5 +596,5 @@ const utils = {
 
 // Export for potential module use
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { MobileMenu, VideoPlayer, utils };
+  module.exports = { ContactFormHandler, MobileMenu, VideoPlayer, utils };
 }

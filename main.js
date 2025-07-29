@@ -313,6 +313,54 @@ class ScrollToTopButton {
 }
 
 /**
+ * Hero Buttons Class - Handles scroll functionality for hero section buttons
+ */
+class HeroButtons {
+  constructor() {
+    this.wantServiceBtn = null;
+    this.viewProductsBtn = null;
+    this.init();
+  }
+
+  init() {
+    this.wantServiceBtn = document.getElementById("wantServiceBtn");
+    this.viewProductsBtn = document.getElementById("viewProductsBtn");
+
+    if (this.wantServiceBtn && this.viewProductsBtn) {
+      this.bindEvents();
+    }
+  }
+
+  bindEvents() {
+    // "Want a service" button - scroll to contact section
+    this.wantServiceBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.scrollToSection("contact");
+    });
+
+    // "View Products" button - scroll to products section
+    this.viewProductsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.scrollToSection("products");
+    });
+  }
+
+  scrollToSection(sectionId) {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      // Calculate offset to account for fixed header
+      const headerHeight = 80; // Approximate header height
+      const targetPosition = targetSection.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+}
+
+/**
  * Video Player Class
  */
 class VideoPlayer {
@@ -457,6 +505,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize new mobile menu
   new MobileMenu();
+
+  // Initialize hero buttons
+  new HeroButtons();
 
   // Initialize video player
   new VideoPlayer();

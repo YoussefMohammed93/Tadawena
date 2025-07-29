@@ -1,34 +1,9 @@
 // News articles data
 const newsArticles = {
   1: {
-    nav: `    <!-- Breadcrumb Navigation -->
-    <nav class="bg-background-100">
-      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14">
-        <div class="flex items-center space-x-2 text-neutral-800">
-          <a
-            href="/"
-            class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
-            >Home</a
-          >
-          <svg
-            class="w-4 h-4 text-neutral-800"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <span class="text-primary-600 font-medium text-base sm:text-lg"
-            >Latest News</span
-          >
-        </div>
-      </div>
-    </nav>`,
     title:
       "Fresh Perspectives, Bright Futures: Tadawena Hosts Summer Interns 2025",
+    date: "April 22, 2025",
     image: "public/news-5.jpg",
     content: `
       <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
@@ -211,6 +186,7 @@ const newsArticles = {
   2: {
     title:
       "Faith, Food, and Fulfillment: Tadawena's Ramadan Iftar & Employee Awards Night",
+    date: "March 15, 2025",
     image: "public/news-6.jpg",
     content: `
       <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
@@ -296,90 +272,220 @@ const newsArticles = {
     `,
   },
   3: {
+    nav: `    <!-- Breadcrumb Navigation -->
+    <nav class="bg-background-100">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14">
+        <div class="flex items-center space-x-2 text-neutral-800">
+          <a
+            href="/"
+            class="hover:text-primary-600 transition-colors duration-200 text-base sm:text-lg"
+            >Home</a
+          >
+          <svg
+            class="w-4 h-4 text-neutral-800"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-primary-600 font-medium text-base sm:text-lg"
+            >Latest News</span
+          >
+        </div>
+      </div>
+    </nav>`,
     title:
       "Inside Tadawena: A Special Tour of Our Nutritional Supplement Factory",
     date: "July 12, 2024",
     image: "public/news-4.jpg",
     content: `
-      <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-        Step inside <span class="text-primary-600 font-medium">Tadawena's</span> state-of-the-art factory and discover how our high-quality nutritional supplements come to life. From advanced manufacturing processes to rigorous quality control and expert formulation, this exclusive tour reveals our commitment to excellence.
+      <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-8">
+        Step inside Tadawena's state-of-the-art factory and discover how our high-quality nutritional supplements come to life. From advanced manufacturing processes to rigorous quality control and expert formulation, this exclusive tour reveals our commitment to excellence.
       </p>
 
-      <!-- Factory Tour Image -->
+      <!-- Factory Tour Images - Asymmetric Layout -->
       <div class="py-6">
-        <div
-          class="aspect-video w-full max-w-2xl mx-auto overflow-hidden rounded-2xl sm:rounded-[48px]"
-        >
-          <img
-            src="public/news-4.jpg"
-            alt="Inside Tadawena's Nutritional Supplement Factory"
-            class="w-full h-full object-contain"
-          />
-        </div>
-      </div>
-
-      <!-- Manufacturing Excellence Section -->
-      <div class="mt-12 mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold text-primary-600 mb-6 font-ovo">
-          Manufacturing Excellence
-        </h2>
-        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-          Our factory represents the pinnacle of pharmaceutical manufacturing technology. Every step of our production process is carefully monitored and controlled to ensure that each supplement meets the highest standards of quality, purity, and effectiveness.
-        </p>
-        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-          From raw material sourcing to final packaging, our facility operates under strict Good Manufacturing Practice (GMP) guidelines, ensuring that every product that leaves our factory is safe, effective, and reliable.
-        </p>
-      </div>
-
-      <!-- Quality Control Section -->
-      <div class="mt-12 mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold text-primary-600 mb-6 font-ovo">
-          Rigorous Quality Control
-        </h2>
-        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-          Quality is at the heart of everything we do. Our dedicated quality assurance team conducts comprehensive testing at every stage of production, from incoming raw materials to finished products. This multi-layered approach ensures that our supplements consistently meet or exceed industry standards.
-        </p>
-
-        <div class="space-y-4">
-          <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
-            <p class="text-lg sm:text-xl text-[#333232]">
-              Advanced analytical testing equipment
-            </p>
-          </div>
-          <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
-            <p class="text-lg sm:text-xl text-[#333232]">
-              Microbiological safety testing
-            </p>
-          </div>
-          <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
-            <p class="text-lg sm:text-xl text-[#333232]">
-              Potency and purity verification
-            </p>
-          </div>
-          <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
-            <p class="text-lg sm:text-xl text-[#333232]">
-              Stability and shelf-life testing
-            </p>
+        <div class="max-w-xl mx-auto">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <img
+                src="public/news-4.jpg"
+                alt="Tadawena Factory Tour - Production Line"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Innovation and Research Section -->
+      <!-- A Glimpse into Certified Excellence Section -->
       <div class="mt-12 mb-8">
         <h2 class="text-2xl sm:text-3xl font-bold text-primary-600 mb-6 font-ovo">
-          Innovation and Research
+          A Glimpse into Certified Excellence
         </h2>
-        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-          Our factory is not just a manufacturing facility—it's a center of innovation. Our research and development team works tirelessly to develop new formulations and improve existing products, ensuring that we stay at the forefront of nutritional science.
+        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed font-light mb-6">
+          The factory, located near Qaliub, proudly operates under NSFA (National Food Safety Authority) approval, meeting Egypt's top safety and manufacturing standards. From raw material inspection to packaging and labeling, every step is monitored with meticulous care to ensure that only safe, effective, and compliant products reach the market.
         </p>
-        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed mb-6">
-          Through continuous investment in technology and expertise, we're able to bring cutting-edge nutritional solutions to market, helping individuals and families achieve their health and wellness goals.
+        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed font-light mb-8">
+          Visitors walked through high-tech production lines, witnessed rigorous lab testing, and engaged with the quality assurance team to understand how Tadawena upholds the trust it has built in the pharmaceutical and nutritional supplement sectors.
         </p>
       </div>
+
+      <!-- Supporting Startups and Supplement Entrepreneurs Section -->
+      <div class="mt-12 mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-primary-600 mb-6 font-ovo">
+          Supporting Startups and Supplement Entrepreneurs
+        </h2>
+        <p class="text-lg sm:text-xl text-[#333232] leading-relaxed font-light mb-6">
+          One of the most exciting takeaways from the tour was Tadawena's open-door policy for collaborating with startup supplement and pharmaceutical businesses. If you have a supplement or medication idea but lack the infrastructure to bring it to market, Tadawena can help manufacture your product at its certified facility, offering:
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
+            <p class="text-lg sm:text-xl text-[#333232] font-light">
+              Full production services (capsules, tablets, syrups, powders, etc.)
+            </p>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
+            <p class="text-lg sm:text-xl text-[#333232] font-light">
+              Packaging and private labeling
+            </p>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
+            <p class="text-lg sm:text-xl text-[#333232] font-light">
+              Guidance on compliance and approvals
+            </p>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
+            <p class="text-lg sm:text-xl text-[#333232] font-light">
+              Scalable solutions from pilot batches to mass production
+            </p>
+          </div>
+        </div>
+
+        <p class="text-lg sm:text-xl text-[#333232] font-light leading-relaxed mb-8">
+          Whether you're a pharmacist, nutritionist, wellness entrepreneur, or startup founder, Tadawena offers you a reliable production partner backed by years of experience and national-level certifications.
+        </p>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="mt-12 mb-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-primary-600 mb-6">
+          Have a formula in mind? Let Tadawena bring it to life.
+        </h2>
+      </div>
+
+      <section id="contact" class="bg-background-100 py-8">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Contact Container with Border -->
+        <div class="border border-primary-500 rounded-3xl p-8 md:p-12 lg:p-16 bg-white/50 backdrop-blur-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <!-- Left Side - Content and Image -->
+            <div class="space-y-8">
+              <!-- Header Text -->
+              <div class="space-y-4">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 font-ovo leading-tight">
+                  Get In Touch
+                </h2>
+                <p class="text-lg md:text-xl text-neutral-800 leading-relaxed">
+                  Contact us with your feedback or inquiries and we'll get back to you!
+                </p>
+              </div>
+
+              <!-- Contact Illustration -->
+              <div class="flex justify-center lg:justify-start">
+                <img
+                  src="public/contact.svg"
+                  alt="Contact Us Illustration"
+                  class="w-full max-w-md h-auto object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Right Side - Contact Form -->
+            <div class="space-y-6">
+              <form class="space-y-6" id="contactForm">
+                <!-- Full Name Field -->
+                <div class="space-y-2">
+                  <label for="fullName" class="block text-lg font-medium text-neutral-800">
+                    Full Name
+                  </label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <svg class="h-5 w-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="Ahmed Kamil"
+                      class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="space-y-2">
+                  <label for="email" class="block text-lg font-medium text-neutral-800">
+                    Email
+                  </label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <svg class="h-5 w-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="user@mail.com"
+                      class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="space-y-2">
+                  <label for="message" class="block text-lg font-medium text-neutral-800">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Your message"
+                    class="w-full px-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80 resize-none"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="w-full bg-primary-600 hover:bg-transparent text-white hover:text-primary-600 border border-transparent hover:border-primary-600 py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
+                >
+                  Send your message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     `,
   },
 };
@@ -409,10 +515,10 @@ function loadArticleContent() {
       titleElement.textContent = article.title;
     }
 
-    // Update date
-    const dateElement = document.querySelector(".text-neutral-800");
-    if (dateElement) {
-      dateElement.textContent = article.date;
+    // Update date - find the date span specifically
+    const dateSpan = document.querySelector(".flex.items-center.gap-2 span");
+    if (dateSpan && article.date) {
+      dateSpan.textContent = article.date;
     }
 
     // Update content

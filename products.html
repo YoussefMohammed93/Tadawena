@@ -11,6 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ovo&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .news-heading-border::after {
+        width: 25% !important;
+      }
+      @media (max-width: 600px) {
+        .news-heading-border::after {
+          width: 50% !important;
+        }
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -78,15 +88,16 @@
     <!-- Main Content -->
     <main class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pb-8">
       <!-- Page Title -->
-      <div class="pt-8 pb-12">
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 font-ovo"
+      <div class="py-12">
+        <h2
+          class="text-4xl md:text-5xl pb-3 lg:text-6xl font-bold text-primary-600 font-ovo relative news-heading-border"
         >
-          Our Products
-        </h1>
-        <p class="text-lg sm:text-xl text-neutral-800 mt-4 leading-relaxed">
-          Discover our comprehensive range of high-quality nutritional
-          supplements designed to support your health and wellness journey.
+          Products
+        </h2>
+        <p
+          class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-ovo text-primary-600 mt-10"
+        >
+          Line 1: Vitamin D3 Supplements
         </p>
       </div>
 

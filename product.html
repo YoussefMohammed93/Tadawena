@@ -129,12 +129,9 @@
             >
               Active Ingredients
             </h3>
-            <p
-              class="text-base sm:text-lg text-neutral-800 leading-relaxed"
-              id="active-ingredients"
-            >
-              Vitamin D3 - Cholecalciferol
-            </p>
+            <div id="active-ingredients-container">
+              <!-- Dynamic content will be inserted here -->
+            </div>
           </div>
 
           <!-- Drug Usage Indications Section -->
@@ -144,14 +141,12 @@
             >
               Drug Usage Indications:
             </h3>
-            <p
-              class="text-base sm:text-lg font-light text-neutral-800 leading-relaxed"
+            <ul
+              class="text-base sm:text-lg font-medium text-neutral-800 leading-relaxed list-disc list-inside space-y-2"
               id="usage-indications"
             >
-              Used To Treat Vitamin D Insufficiency Or Deficiency, Osteoporosis
-              Prevention In Case Of Hypoparathyroidism & Vitamin D Insufficiency
-              Or Deficiency In Patients With Chronic Kidney Disease.
-            </p>
+              <!-- Dynamic content will be inserted here -->
+            </ul>
           </div>
         </div>
       </div>
@@ -161,77 +156,185 @@
       // Product data
       const products = {
         1: {
-          title: "Vitamin D3 1000 IU",
+          title: "Nelex 1000 IU",
           subtitle: "Cholecalciferol",
           activeIngredients: "Vitamin D3 - Cholecalciferol",
-          usageIndications:
-            "Used To Treat Vitamin D Insufficiency Or Deficiency, Osteoporosis Prevention, In Case Of Hypoparathyroidism & Vitamin D Insufficiency Or Deficiency In Patients With Chronic Kidney Disease.",
+          activeIngredientsBullets: false,
+          usageIndications: [
+            "Used to treat Vitamin D3 deficiency",
+            "Osteoporosis prevention",
+            "In case of hypoparathyroidism",
+            "Vitamin D insufficiency in patients with chronic kidney disease",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-1.jpg",
         },
         2: {
-          title: "Herbal GIT Health Support",
+          title: "Nelex 5,000 IU",
           subtitle: "Anti-flatulent, Anti-spasmodic",
-          activeIngredients: "Mint, anise, chamomile and Dill",
-          usageIndications:
-            "Herbal drink GIT Health support (anti-flatulent, Anti-spasmodic), this natural herbal formulation is designed to support the health of the Gastrointestinal Tract (GIT) by relieving common digestive issues such as gas, bloating, and intestinal cramps. It combines a carefully selected blend of traditional herbs.",
+          activeIngredients: ["Vitamin D3 - Cholecalciferol"],
+          activeIngredientsBullets: false,
+          usageIndications: [
+            "Supports healthy calcium and phosphorus absorption.",
+            "Contributes to the development and maintenance of strong bones and teeth.",
+            "Helps reduce the risk of bone disorders such as osteoporosis.",
+            "Aids in supporting normal muscle function.",
+            "Plays a vital role in strengthening the immune system.",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-2.jpg",
         },
         3: {
-          title: "Galactagogue Herbal Remedy",
+          title: "Nelex 10,000 IU",
           subtitle: "Milk Supply Support",
-          activeIngredients:
-            "Fenugreek, Chamomile, Fennel seeds, Caraway seeds, Anise Oil, Ginger, Calcium, Dill, Zinc",
-          usageIndications:
-            "Galactagogue (Help to increase the milk supply of nursing mothers), This carefully formulated herbal remedy is designed to naturally stimulate and support breast milk production in lactating mothers.",
-          image: "public/product-3.jpg",
-        },
-        4: {
-          title: "Vitamin D3 10000 IU",
-          subtitle: "Cholecalciferol",
-          activeIngredients: "Vitamin D3 - Cholecalciferol",
-          usageIndications:
-            "Dietary Supplement Tablets Contain Vitamin D3 10000 IU 'Cholecalciferol' Used to offer a powerful dose of the 'sunshine vitamin' to help individuals facing deficiency or needing extra support for specific health conditions.",
+          activeIngredients: ["Vitamin D3 - Cholecalciferol"],
+          activeIngredientsBullets: false,
+          usageIndications: [
+            "Dietary Supplement Tablets Contain Vitamin D3 10000 IU 'Cholecalciferol' Used to:",
+            "Offer a powerful dose of the to help individuals facing deficiency",
+            "Needing extra support for specific health conditions.",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-4.jpg",
         },
-        5: {
-          title: "Vitamin C with Orange Flavor",
-          subtitle: "Immunity Support",
-          activeIngredients:
-            "Vit C 500mg, Zinc Gluconate 40mg, Vit B complex 10mg, Magnesium 10mg",
-          usageIndications:
-            "Support immunity with the flavor of orange to have a healthy life with no illness, Vitamin C is a powerful antioxidant that plays a vital role in protecting the body's cells from damage, supporting white blood cell activity, and boosting the body's natural defenses.",
-          image: "public/product-5.jpg",
-        },
-        6: {
-          title: "Pediatric Colic Relief",
-          subtitle: "For Babies and Small Children",
-          activeIngredients: "Mint, anise, chamomile and Dill",
-          usageIndications:
-            "For Intestinal colic and bloating symptoms for babies and small children, eases involuntary contractions and spasms of the intestinal muscles, which are often associated with irritable bowel symptoms, cramping, or colic.",
-          image: "public/product-6.jpg",
-        },
-        7: {
-          title: "Vitamin D3 50000 IU",
+        4: {
+          title: "Nelex 50,000 IU",
           subtitle: "Cholecalciferol",
           activeIngredients: "Vitamin D3 - Cholecalciferol",
-          usageIndications:
-            "Dietary Supplement Tablets Contain Vitamin D3 50000 IU 'Cholecalciferol' Used To enhance calcium and phosphorus absorption, which are essential for building and maintaining bone density and preventing fractures or bone disorders such as osteoporosis.",
+          activeIngredientsBullets: false,
+          usageIndications: [
+            "Enhances calcium and phosphorus absorption in the body.",
+            "Supports the development and maintenance of healthy bone density.",
+            "Helps prevent fractures and bone weakness.",
+            "Contributes to the prevention of bone disorders such as osteoporosis.",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-7.jpg",
         },
-        8: {
-          title: "Vitamin D3 2800 IU/ml",
-          subtitle: "Cholecalciferol",
-          activeIngredients: "Vitamin D3 - Cholecalciferol",
-          usageIndications:
-            "Dietary Supplement Tablets Contain Vitamin D3 contains 2800 IU / ml to support modulating the immune system, helping the body fight off viruses, infections, and chronic inflammation more effectively.",
+        5: {
+          title: "Nel D3 Drops",
+          subtitle: "Immunity Support",
+          activeIngredients: ["Vitamin D3 - Cholecalciferol"],
+          activeIngredientsBullets: false,
+          usageIndications: [
+            "Supports modulation of the immune system.",
+            "Enhances the body’s ability to fight off viruses and infections.",
+            "Contributes to reducing the risk of chronic inflammation.",
+            "Promotes overall immune resilience and defense.",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-8.jpg",
         },
+        6: {
+          title: "Clamero",
+          subtitle: "For Babies and Small Children",
+          activeIngredients: ["Mint", "Anise", "Chamomile", "Dill"],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Herbal drink GIT Health support (anti-flatulent, Anti-spasmodic), this natural herbal formulation is designed to:",
+            "Support the health of the Gastrointestinal Tract (GIT)",
+            "Relieving common digestive issues such as gas, bloating, and intestinal cramps.",
+          ],
+          usageIndicationsBullets: true,
+          image: "public/product-3.jpg",
+        },
+        7: {
+          title: "Babonge Syrup",
+          subtitle: "Cholecalciferol",
+          activeIngredients: ["Mint", "Anise", "Chamomile", "Dill"],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Designed to:",
+            "Relieves intestinal colic and bloating symptoms in babies and small children.",
+            "Eases involuntary contractions and spasms of the intestinal muscles.",
+            "Helps reduce discomfort associated with cramping and colic.",
+          ],
+          usageIndicationsBullets: true,
+          image: "public/product-6.jpg",
+        },
+        8: {
+          title: "Normapid caramel peices",
+          subtitle: "Cholecalciferol",
+          activeIngredients: [
+            "Fenugreek",
+            "Chamomile",
+            "Fennel seeds",
+            "Caraway seeds",
+            "Anise Oil",
+            "Ginger",
+            "Calcium",
+            "Dill",
+            "Zinc",
+          ],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Galactagogue (Help to increase the milk supply of nursing mothers) designed to:",
+            "Naturally stimulate and support breast milk production in lactating mothers.",
+          ],
+          usageIndicationsBullets: true,
+          image: "public/product-10.jpg",
+        },
         9: {
-          title: "Respiratory Health Cough Syrup",
+          title: "C-Guard",
           subtitle: "Cold and Flu Relief",
-          activeIngredients: "Ivy, Thyme, Licorice",
-          usageIndications:
-            "Respiratory System Health support (cough syrup) used to heal colds and hard flus, Formulated to relax the bronchial muscles and open the airways for smoother, deeper breaths—especially helpful during flu-related chest tightness or wheezing.",
+          activeIngredients: [
+            "Vit C 500mg",
+            "Vit B complex 10mg",
+            "Zinc Gluconate 40mg",
+            "Magnesium 10mg",
+          ],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Supports and strengthens the immune system.",
+            "Provides a refreshing orange flavor for daily wellness.",
+            "Acts as a powerful antioxidant to protect body cells from oxidative damage.",
+          ],
+          usageIndicationsBullets: true,
+          image: "public/product-5.jpg",
+        },
+        10: {
+          title: "C-Mixena",
+          subtitle: "Cold and Flu Relief",
+          activeIngredients: [
+            "Vitamin C",
+            "Vitamin D3",
+            "Thiamin",
+            "Riboflavin",
+            "Niacin",
+            "Pyridoxine",
+            "Folate",
+            "Chromium",
+            "Lysin",
+            "Cyanocobalamin",
+            "Pantothenic acid",
+            "Calcium carbonate",
+            "Potassium phosphate",
+            "Magnesium",
+            "Zinc",
+            "Sulphate",
+            "Manganese",
+          ],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Supports immune system function and enhances the body’s natural defenses.",
+            "Promotes healthy bones, teeth, and muscle function through calcium, magnesium, and vitamin D3.",
+            "Aids in maintaining healthy skin, hair, and nails with antioxidant and metabolic support.",
+          ],
+          usageIndicationsBullets: true,
+          image: "public/product-11.png",
+        },
+        11: {
+          title: "Telontair Syrup",
+          subtitle: "Cold and Flu Relief",
+          activeIngredients: ["Ivy", "Thyme", "Licorice"],
+          activeIngredientsBullets: true,
+          usageIndications: [
+            "Supports respiratory system health during colds and flu.",
+            "Helps relieve cough and ease breathing difficulties.",
+            "Relaxes bronchial muscles to reduce chest tightness and wheezing.",
+            "Promotes airway opening for smoother, deeper breaths.",
+          ],
+          usageIndicationsBullets: true,
           image: "public/product-9.jpg",
         },
       };
@@ -244,10 +347,59 @@
       // Update page content
       document.getElementById("product-breadcrumb").textContent = product.title;
       document.getElementById("product-title").textContent = product.title;
-      document.getElementById("active-ingredients").textContent =
-        product.activeIngredients;
-      document.getElementById("usage-indications").textContent =
-        product.usageIndications;
+
+      // Update active ingredients conditionally
+      const activeIngredientsContainer = document.getElementById(
+        "active-ingredients-container"
+      );
+      activeIngredientsContainer.innerHTML = "";
+
+      if (
+        product.activeIngredientsBullets &&
+        Array.isArray(product.activeIngredients)
+      ) {
+        const ul = document.createElement("ul");
+        ul.className =
+          "text-base sm:text-lg text-neutral-800 leading-relaxed list-disc list-inside space-y-2";
+        product.activeIngredients.forEach((ingredient) => {
+          const li = document.createElement("li");
+          li.textContent = ingredient;
+          ul.appendChild(li);
+        });
+        activeIngredientsContainer.appendChild(ul);
+      } else {
+        const p = document.createElement("p");
+        p.className = "text-base sm:text-lg text-neutral-800 leading-relaxed";
+        p.textContent = product.activeIngredients;
+        activeIngredientsContainer.appendChild(p);
+      }
+
+      // Update usage indications conditionally
+      const usageIndicationsElement =
+        document.getElementById("usage-indications");
+      usageIndicationsElement.innerHTML = "";
+
+      if (
+        product.usageIndicationsBullets &&
+        Array.isArray(product.usageIndications)
+      ) {
+        product.usageIndications.forEach((indication) => {
+          const li = document.createElement("li");
+          li.textContent = indication;
+          usageIndicationsElement.appendChild(li);
+        });
+      } else {
+        // Convert ul to p for non-bullet format
+        const usageContainer = usageIndicationsElement.parentNode;
+        const p = document.createElement("p");
+        p.className =
+          "text-base sm:text-lg font-light text-neutral-800 leading-relaxed";
+        p.id = "usage-indications";
+        p.textContent = Array.isArray(product.usageIndications)
+          ? product.usageIndications.join(". ")
+          : product.usageIndications;
+        usageContainer.replaceChild(p, usageIndicationsElement);
+      }
 
       // Update product image
       const productImage = document.getElementById("product-main-image");

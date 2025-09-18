@@ -100,6 +100,9 @@ class MobileMenu {
             <a href="#news" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Latest News
             </a>
+            <a href="#factory" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+              Factory
+            </a>
             <a href="#contact" class="menu-item block py-3 px-4 text-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
               Contact Us
             </a>

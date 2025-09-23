@@ -21,7 +21,7 @@ const factoryData = {
   },
   3: {
     id: 3,
-    title: "Production line of Tablets (blister packs - jars)",
+    title: "Production line of Powder and sachets",
     breadcrumbTitle: "Production Line - Tablets",
     image: "public/factory-3.jpg",
     gallery: ["public/fac-8.jpg", "public/fac-9.jpg"],

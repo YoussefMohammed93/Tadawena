@@ -514,6 +514,61 @@
         />
       </svg>
     </button>
+    <!-- Success Notification -->
+    <div
+      id="successNotification"
+      class="fixed top-8 right-8 z-[100] transform translate-x-full opacity-0 transition-all duration-500 ease-out"
+    >
+      <div
+        class="bg-white border-l-4 border-green-500 rounded-lg shadow-2xl p-6 max-w-md"
+      >
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg
+              class="h-6 w-6 text-green-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <div class="ml-3 flex-1">
+            <h3 class="text-lg font-semibold text-primary-600 font-open-sans">
+              Message Sent Successfully!
+            </h3>
+            <p class="mt-1 text-neutral-800 text-base">
+              Thank you for contacting us. We'll get back to you soon.
+            </p>
+          </div>
+          <div class="ml-4 flex-shrink-0">
+            <button
+              id="closeNotification"
+              class="inline-flex text-neutral-800 hover:text-primary-600 transition-colors duration-200"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- News Data JavaScript -->
     <script src="news-data.js"></script>
     <!-- Main JavaScript -->

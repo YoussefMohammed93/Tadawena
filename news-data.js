@@ -383,7 +383,7 @@ const newsArticles = {
         </h2>
       </div>
 
-      <section id="contact" class="bg-background-100 py-8">
+    <section id="contact" class="bg-background-100 py-16">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Contact Container with Border -->
         <div class="border border-primary-500 rounded-3xl p-8 md:p-12 lg:p-16 bg-white/50 backdrop-blur-sm">
@@ -393,12 +393,9 @@ const newsArticles = {
             <div class="space-y-8">
               <!-- Header Text -->
               <div class="space-y-4">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 font-ovo leading-tight">
-                  Get In Touch
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600 font-ovo leading-tight">
+                  Contact Us
                 </h2>
-                <p class="text-lg md:text-xl text-neutral-800 leading-relaxed">
-                  Contact us with your feedback or inquiries and we'll get back to you!
-                </p>
               </div>
 
               <!-- Contact Illustration -->
@@ -413,12 +410,21 @@ const newsArticles = {
 
             <!-- Right Side - Contact Form -->
             <div class="space-y-6">
-              <form class="space-y-6" id="contactForm">
+              <form class="space-y-6" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="328feac3-622f-4382-a7e4-0ac4d170e6bc">
+                
+                <!-- Optional: Subject -->
+                <input type="hidden" name="subject" value="New Contact Form Submission from Tadawena Website">
+                
+                <!-- Optional: From Name -->
+                <input type="hidden" name="from_name" value="Tadawena Website Contact Form">
+                
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" id="" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+                
                 <!-- Full Name Field -->
                 <div class="space-y-2">
-                  <label for="fullName" class="block text-lg font-medium text-neutral-800">
-                    Full Name
-                  </label>
                   <div class="relative">
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                       <svg class="h-5 w-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,8 +434,8 @@ const newsArticles = {
                     <input
                       type="text"
                       id="fullName"
-                      name="fullName"
-                      placeholder="Ahmed Kamil"
+                      name="name"
+                      placeholder="Full Name"
                       class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
                       required
                     />
@@ -438,9 +444,6 @@ const newsArticles = {
 
                 <!-- Email Field -->
                 <div class="space-y-2">
-                  <label for="email" class="block text-lg font-medium text-neutral-800">
-                    Email
-                  </label>
                   <div class="relative">
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                       <svg class="h-5 w-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -451,7 +454,26 @@ const newsArticles = {
                       type="email"
                       id="email"
                       name="email"
-                      placeholder="user@mail.com"
+                      placeholder="Write your email address"
+                      class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="space-y-2">
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <svg class="h-5 w-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                      </svg>
+                    </div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Your phone number"
                       class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
                       required
                     />
@@ -460,9 +482,6 @@ const newsArticles = {
 
                 <!-- Message Field -->
                 <div class="space-y-2">
-                  <label for="message" class="block text-lg font-medium text-neutral-800">
-                    Message
-                  </label>
                   <textarea
                     id="message"
                     name="message"

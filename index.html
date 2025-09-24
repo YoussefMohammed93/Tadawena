@@ -766,8 +766,8 @@
                 <!-- Optional: From Name -->
                 <input type="hidden" name="from_name" value="Tadawena Website Contact Form">
                 
-                <!-- Prevent redirect on success -->
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <!-- Redirect back to contact section with success parameter -->
+                <input type="hidden" name="redirect" id="redirectUrl" value="">
 
                 <!-- Honeypot Spam Protection -->
                 <input type="checkbox" name="botcheck" id="" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
@@ -1057,82 +1057,67 @@
     </div>
     <!-- Main JavaScript -->
     <script src="main.js"></script>
-    <!-- Form Submission Handler -->
+    <!-- Simple form submission with loading state -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
-        const notification = document.getElementById('successNotification');
-        const closeBtn = document.getElementById('closeNotification');
-        let notificationTimeout;
-
-        function showNotification() {
-          // Clear any existing timeout
-          if (notificationTimeout) {
-            clearTimeout(notificationTimeout);
-          }
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        
+        // Set dynamic redirect URL
+        const redirectInput = document.getElementById('redirectUrl');
+        redirectInput.value = window.location.origin + window.location.pathname + '#contact?success=true';
+        
+        // Add loading state on form submission
+        form.addEventListener('submit', function() {
+          submitButton.textContent = 'Sending...';
+          submitButton.disabled = true;
+          
+          // Re-enable button after a delay in case of errors
+          setTimeout(function() {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }, 5000);
+        });
+        
+        // Check for success parameter in URL hash
+        const hash = window.location.hash;
+        console.log('Current hash:', hash); // Debug log
+        const hashParams = new URLSearchParams(hash.includes('?') ? hash.split('?')[1] : '');
+        console.log('Success parameter:', hashParams.get('success')); // Debug log
+        if (hashParams.get('success') === 'true') {
+          // Show the existing success notification
+          const notification = document.getElementById('successNotification');
+          const closeBtn = document.getElementById('closeNotification');
           
           // Show notification with animation
           notification.classList.remove('translate-x-full', 'opacity-0');
           notification.classList.add('translate-x-0', 'opacity-100');
           
-          // Auto-hide after 3 seconds
-          notificationTimeout = setTimeout(hideNotification, 3000);
-        }
-
-        function hideNotification() {
-          notification.classList.remove('translate-x-0', 'opacity-100');
-          notification.classList.add('translate-x-full', 'opacity-0');
-          
-          if (notificationTimeout) {
-            clearTimeout(notificationTimeout);
-            notificationTimeout = null;
-          }
-        }
-
-        // Close button handler
-        closeBtn.addEventListener('click', hideNotification);
-
-        // Form submission handler
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const formData = new FormData(form);
-          const submitButton = form.querySelector('button[type="submit"]');
-          const originalText = submitButton.textContent;
-          
-          // Show loading state
-          submitButton.textContent = 'Sending...';
-          submitButton.disabled = true;
-          
-          try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              body: formData
-            });
+          // Auto-hide after 5 seconds
+          const hideTimeout = setTimeout(function() {
+            notification.classList.remove('translate-x-0', 'opacity-100');
+            notification.classList.add('translate-x-full', 'opacity-0');
             
-            const result = await response.json();
+            // Clean URL - remove success parameter from hash
+            const cleanHash = hash.includes('?') ? hash.split('?')[0] : hash;
+            window.history.replaceState({}, document.title, window.location.pathname + cleanHash);
+          }, 5000);
+          
+          // Close button handler
+          closeBtn.addEventListener('click', function() {
+            notification.classList.remove('translate-x-0', 'opacity-100');
+            notification.classList.add('translate-x-full', 'opacity-0');
+            clearTimeout(hideTimeout);
             
-            if (result.success) {
-              // Show success notification
-              showNotification();
-              
-              // Reset form
-              form.reset();
-            } else {
-              // Handle error
-              alert('There was an error sending your message. Please try again.');
-              console.error('Form submission error:', result);
-            }
-          } catch (error) {
-            // Handle network error
-            alert('There was a network error. Please check your connection and try again.');
-            console.error('Network error:', error);
-          } finally {
-            // Reset button state
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-          }
-        });
+            // Clean URL when manually closed
+            const cleanHash = hash.includes('?') ? hash.split('?')[0] : hash;
+            window.history.replaceState({}, document.title, window.location.pathname + cleanHash);
+          });
+          
+          // Reset form
+          form.reset();
+        }
       });
     </script>
   </body>

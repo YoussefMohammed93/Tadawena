@@ -410,15 +410,18 @@ const newsArticles = {
 
             <!-- Right Side - Contact Form -->
             <div class="space-y-6">
-              <form class="space-y-6" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+              <form class="space-y-6" id="newsContactForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="328feac3-622f-4382-a7e4-0ac4d170e6bc">
                 
                 <!-- Optional: Subject -->
-                <input type="hidden" name="subject" value="New Contact Form Submission from Tadawena Website">
+                <input type="hidden" name="subject" value="New Contact Form Submission from Tadawena Website - News Page">
                 
                 <!-- Optional: From Name -->
                 <input type="hidden" name="from_name" value="Tadawena Website Contact Form">
+                
+                <!-- Redirect back to news page with success parameter -->
+                <input type="hidden" name="redirect" id="newsRedirectUrl" value="">
                 
                 <!-- Honeypot Spam Protection -->
                 <input type="checkbox" name="botcheck" id="" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
@@ -433,7 +436,7 @@ const newsArticles = {
                     </div>
                     <input
                       type="text"
-                      id="fullName"
+                      id="newsFullName"
                       name="name"
                       placeholder="Full Name"
                       class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
@@ -452,7 +455,7 @@ const newsArticles = {
                     </div>
                     <input
                       type="email"
-                      id="email"
+                      id="newsEmail"
                       name="email"
                       placeholder="Write your email address"
                       class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
@@ -471,7 +474,7 @@ const newsArticles = {
                     </div>
                     <input
                       type="tel"
-                      id="phone"
+                      id="newsPhone"
                       name="phone"
                       placeholder="Your phone number"
                       class="w-full pl-12 pr-4 py-4 border border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none text-neutral-800 placeholder-neutral-800/60 text-base lg:text-lg bg-white/80"
@@ -483,7 +486,7 @@ const newsArticles = {
                 <!-- Message Field -->
                 <div class="space-y-2">
                   <textarea
-                    id="message"
+                    id="newsMessage"
                     name="message"
                     rows="5"
                     placeholder="Your message"
@@ -505,6 +508,98 @@ const newsArticles = {
         </div>
       </div>
     </section>
+
+    <!-- Success Notification for News Form -->
+    <div id="newsSuccessNotification" class="fixed top-8 right-8 z-[100] transform translate-x-full opacity-0 transition-all duration-500 ease-out">
+      <div class="bg-white border-l-4 border-green-500 rounded-lg shadow-2xl p-6 max-w-md">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="ml-3 flex-1">
+            <h3 class="text-lg font-semibold text-primary-600 font-open-sans">Message Sent Successfully!</h3>
+            <p class="mt-1 text-neutral-800 text-base">Thank you for contacting us. We'll get back to you soon.</p>
+          </div>
+          <div class="ml-4 flex-shrink-0">
+            <button id="closeNewsNotification" class="inline-flex text-neutral-800 hover:text-primary-600 transition-colors duration-200">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // News form handling
+      document.addEventListener('DOMContentLoaded', function() {
+        const newsForm = document.getElementById('newsContactForm');
+        if (newsForm) {
+          const submitButton = newsForm.querySelector('button[type="submit"]');
+          const originalText = submitButton.textContent;
+          
+          // Set dynamic redirect URL for news form
+          const redirectInput = document.getElementById('newsRedirectUrl');
+          if (redirectInput) {
+            redirectInput.value = window.location.origin + window.location.pathname + window.location.search + '#contact?success=true';
+          }
+          
+          // Add loading state on form submission
+          newsForm.addEventListener('submit', function() {
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Re-enable button after a delay in case of errors
+            setTimeout(function() {
+              submitButton.textContent = originalText;
+              submitButton.disabled = false;
+            }, 5000);
+          });
+          
+          // Check for success parameter in URL hash
+          const hash = window.location.hash;
+          const hashParams = new URLSearchParams(hash.includes('?') ? hash.split('?')[1] : '');
+          if (hashParams.get('success') === 'true') {
+            // Show the news success notification
+            const notification = document.getElementById('newsSuccessNotification');
+            const closeBtn = document.getElementById('closeNewsNotification');
+            
+            if (notification && closeBtn) {
+              // Show notification with animation
+              notification.classList.remove('translate-x-full', 'opacity-0');
+              notification.classList.add('translate-x-0', 'opacity-100');
+              
+              // Auto-hide after 5 seconds
+              const hideTimeout = setTimeout(function() {
+                notification.classList.remove('translate-x-0', 'opacity-100');
+                notification.classList.add('translate-x-full', 'opacity-0');
+                
+                // Clean URL - remove success parameter from hash
+                const cleanHash = hash.includes('?') ? hash.split('?')[0] : hash;
+                window.history.replaceState({}, document.title, window.location.pathname + window.location.search + cleanHash);
+              }, 5000);
+              
+              // Close button handler
+              closeBtn.addEventListener('click', function() {
+                notification.classList.remove('translate-x-0', 'opacity-100');
+                notification.classList.add('translate-x-full', 'opacity-0');
+                clearTimeout(hideTimeout);
+                
+                // Clean URL when manually closed
+                const cleanHash = hash.includes('?') ? hash.split('?')[0] : hash;
+                window.history.replaceState({}, document.title, window.location.pathname + window.location.search + cleanHash);
+              });
+              
+              // Reset form
+              newsForm.reset();
+            }
+          }
+        }
+      });
+    </script>
     `,
   },
 };

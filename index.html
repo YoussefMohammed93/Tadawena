@@ -1166,10 +1166,10 @@
         const closeXBtn = document.getElementById('closePopupX');
         
         // Countdown Timer Configuration
-        // Start: November 27, 2025 at 6:00 AM
-        // Duration: 24 hours (ends November 28, 2025 at 6:00 AM)
-        const startDate = new Date('2025-11-27T06:00:00');
-        const endDate = new Date('2025-11-28T06:00:00'); // 24 hours later
+        // Start: November 25, 2025 at 6:00 AM (Tuesday)
+        // End: November 28, 2025 at 6:00 AM (Friday)
+        const startDate = new Date('2025-11-25T06:00:00');
+        const endDate = new Date('2025-11-28T06:00:00');
         
         // Timer elements
         const daysElement = document.getElementById('days');
@@ -1180,18 +1180,10 @@
         // Function to update countdown
         function updateCountdown() {
           const now = new Date();
-          let targetDate;
-          let timeRemaining;
+          const targetDate = endDate; // Always count down to Friday 6:00 AM
           
-          // Determine which date to count down to
-          if (now < startDate) {
-            // Before start: count down to start date
-            targetDate = startDate;
-          } else if (now >= startDate && now < endDate) {
-            // Between start and end: count down to end date
-            targetDate = endDate;
-          } else {
-            // After end: timer expired
+          // Check if timer has expired
+          if (now >= endDate) {
             daysElement.textContent = '00';
             hoursElement.textContent = '00';
             minutesElement.textContent = '00';
@@ -1199,7 +1191,7 @@
             return;
           }
           
-          timeRemaining = targetDate - now;
+          const timeRemaining = targetDate - now;
           
           // Calculate time components
           const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));

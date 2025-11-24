@@ -1022,6 +1022,98 @@
         </div>
       </div>
     </footer>
+    <!-- Questionnaire Popup Modal -->
+    <div id="questionnairePopup" class="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-300">
+      <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 transform transition-all duration-300">
+        <!-- Close X Button -->
+        <button
+          id="closePopupX"
+          class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-neutral-800 hover:text-primary-600 hover:bg-gray-100 rounded-full transition-all duration-200 z-10"
+          aria-label="Close popup"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Popup Content -->
+        <div class="text-center space-y-4 sm:space-y-6">
+          <!-- Icon -->
+          <div class="flex justify-center">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary-600 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-600 font-ovo">
+            Important Questionnaire
+          </h2>
+
+          <!-- Description -->
+          <p class="text-base sm:text-lg md:text-xl text-neutral-800">
+            Fill and win a gift on the spot! 🎁
+          </p>
+
+          <!-- Countdown Timer -->
+          <div class="bg-background-100 border border-primary-600 rounded-xl p-4 sm:p-6">
+            <p class="text-sm sm:text-base text-neutral-800 mb-3 font-medium">Time Remaining :</p>
+            <div class="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+              <!-- Days -->
+              <div class="flex flex-col items-center">
+                <div class="bg-primary-600 text-white rounded-lg p-2 sm:p-3 md:p-4 w-full text-center">
+                  <span id="days" class="text-xl sm:text-2xl md:text-3xl font-bold font-ovo">00</span>
+                </div>
+                <span class="text-xs sm:text-sm text-neutral-800 mt-1 sm:mt-2">Days</span>
+              </div>
+              <!-- Hours -->
+              <div class="flex flex-col items-center">
+                <div class="bg-primary-600 text-white rounded-lg p-2 sm:p-3 md:p-4 w-full text-center">
+                  <span id="hours" class="text-xl sm:text-2xl md:text-3xl font-bold font-ovo">00</span>
+                </div>
+                <span class="text-xs sm:text-sm text-neutral-800 mt-1 sm:mt-2">Hours</span>
+              </div>
+              <!-- Minutes -->
+              <div class="flex flex-col items-center">
+                <div class="bg-primary-600 text-white rounded-lg p-2 sm:p-3 md:p-4 w-full text-center">
+                  <span id="minutes" class="text-xl sm:text-2xl md:text-3xl font-bold font-ovo">00</span>
+                </div>
+                <span class="text-xs sm:text-sm text-neutral-800 mt-1 sm:mt-2">Minutes</span>
+              </div>
+              <!-- Seconds -->
+              <div class="flex flex-col items-center">
+                <div class="bg-primary-600 text-white rounded-lg p-2 sm:p-3 md:p-4 w-full text-center">
+                  <span id="seconds" class="text-xl sm:text-2xl md:text-3xl font-bold font-ovo">00</span>
+                </div>
+                <span class="text-xs sm:text-sm text-neutral-800 mt-1 sm:mt-2">Seconds</span>
+              </div>
+            </div>
+          </div>
+          <!-- Buttons Side by Side -->
+          <div class="flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 pt-2">
+            <!-- Close Button -->
+            <button
+              id="closePopup"
+              class="flex-1 border border-primary-600 text-primary-600 hover:border-[#B89B1B] hover:bg-transparent hover:text-[#B89B1B] py-3 sm:py-4 px-6 rounded-lg transition-colors duration-200 text-base sm:text-lg font-medium"
+            >
+              Close
+            </button>
+            <!-- Fill Questionnaire Button -->
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeaGCAbx-uy0fZUFr3weiLlf9vG3H2YUHGznHjQbJ56B1LHXg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 text-center bg-primary-600 hover:bg-[#B89B1B] text-white hover:text-white border border-transparent hover:border-[#B89B1B] py-3 sm:py-4 px-6 rounded-lg transition-colors duration-200 text-base sm:text-lg font-medium"
+            >
+              Fill Questionnaire
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button
       id="scrollToTopBtn"
@@ -1065,6 +1157,114 @@
     </div>
     <!-- Main JavaScript -->
     <script src="main.js"></script>
+    
+    <!-- Questionnaire Popup Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('questionnairePopup');
+        const closeBtn = document.getElementById('closePopup');
+        const closeXBtn = document.getElementById('closePopupX');
+        
+        // Countdown Timer Configuration
+        // Start: November 27, 2025 at 6:00 AM
+        // Duration: 24 hours (ends November 28, 2025 at 6:00 AM)
+        const startDate = new Date('2025-11-27T06:00:00');
+        const endDate = new Date('2025-11-28T06:00:00'); // 24 hours later
+        
+        // Timer elements
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        
+        // Function to update countdown
+        function updateCountdown() {
+          const now = new Date();
+          let targetDate;
+          let timeRemaining;
+          
+          // Determine which date to count down to
+          if (now < startDate) {
+            // Before start: count down to start date
+            targetDate = startDate;
+          } else if (now >= startDate && now < endDate) {
+            // Between start and end: count down to end date
+            targetDate = endDate;
+          } else {
+            // After end: timer expired
+            daysElement.textContent = '00';
+            hoursElement.textContent = '00';
+            minutesElement.textContent = '00';
+            secondsElement.textContent = '00';
+            return;
+          }
+          
+          timeRemaining = targetDate - now;
+          
+          // Calculate time components
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+          
+          // Update display with zero-padding
+          daysElement.textContent = String(days).padStart(2, '0');
+          hoursElement.textContent = String(hours).padStart(2, '0');
+          minutesElement.textContent = String(minutes).padStart(2, '0');
+          secondsElement.textContent = String(seconds).padStart(2, '0');
+        }
+        
+        // Show popup on page load if user hasn't closed it
+        function showPopup() {
+          const popupClosed = localStorage.getItem('questionnairePopupClosed');
+          
+          // Only show if user hasn't closed it before
+          if (!popupClosed) {
+            popup.style.display = 'flex';
+            // Trigger animation
+            setTimeout(() => {
+              popup.style.opacity = '1';
+            }, 10);
+          }
+        }
+        
+        // Hide popup function
+        function hidePopup() {
+          popup.style.opacity = '0';
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, 300);
+          // Save to localStorage that user closed the popup
+          localStorage.setItem('questionnairePopupClosed', 'true');
+        }
+        
+        // Close button event listeners
+        closeBtn.addEventListener('click', hidePopup);
+        closeXBtn.addEventListener('click', hidePopup);
+        
+        // Close popup when clicking outside
+        popup.addEventListener('click', function(e) {
+          if (e.target === popup) {
+            hidePopup();
+          }
+        });
+        
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && popup.style.display === 'flex') {
+            hidePopup();
+          }
+        });
+        
+        // Initialize countdown and update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Show popup on page load
+        showPopup();
+      });
+    </script>
+    
     <!-- Simple form submission with loading state -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
